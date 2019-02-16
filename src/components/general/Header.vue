@@ -1,7 +1,7 @@
 <template lang="pug">
   header.header-home.flex.items-center.justify-center.shadow-global
     div.header-home__container.flex.items-center.justify-between
-      q-img(src="../../statics/quasar-logo.png").header-home__container__logo
+      q-img(src="../../assets/ibage.png").header-home__container__logo
       nav.header-home__container__nav.flex
         a(href="#") Quem Somos
         a(href="#") Produtos e Serviços
@@ -40,14 +40,14 @@ export default {
     @media (max-width: 1300px)
       padding 45px
     @media (max-width: 768px)
-      padding 30px
+      padding 30px 25px 30px 30px
     @media (max-width: 414px)
-      padding 15px
+      padding 15px 10px 15px 15px
 
     &__logo
-      max-width 55px
+      max-width 78px
       @media (max-width: 414px)
-        max-width 40px
+        max-width 55px
 
     &__nav
       color $primary
