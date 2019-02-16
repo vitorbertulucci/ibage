@@ -14,9 +14,9 @@ module.exports = function (ctx) {
 
     extras: [
       'roboto-font',
-      'material-icons' // optional, you are not bound to it
+      'material-icons', // optional, you are not bound to it
       // 'ionicons-v4',
-      // 'mdi-v3',
+      'mdi-v3'
       // 'fontawesome-v5',
       // 'eva-icons'
     ],
@@ -36,7 +36,8 @@ module.exports = function (ctx) {
         'QList',
         'QItem',
         'QItemSection',
-        'QItemLabel'
+        'QItemLabel',
+        'QImg'
       ],
 
       directives: [
@@ -56,7 +57,7 @@ module.exports = function (ctx) {
 
     build: {
       scopeHoisting: true,
-      // vueRouterMode: 'history',
+      vueRouterMode: 'history',
       // vueCompiler: true,
       // gzip: true,
       // analyze: true,
@@ -82,7 +83,7 @@ module.exports = function (ctx) {
     },
 
     // animations: 'all' --- includes all animations
-    animations: [],
+    animations: 'all',
 
     ssr: {
       pwa: false
