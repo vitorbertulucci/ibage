@@ -9,6 +9,12 @@
           a(href="#") Notícias
           a(href="#") Parceiros
           a(href="#") Contatos
+        q-btn(
+          icon="mdi-menu"
+          color="grey-3"
+          round
+          flat
+        ).header__menu-button
     div.introduction__content.flex.no-wrap
       div.content__simple-description
         h2 Lorem Ipsum is simply dummy text of the printing
@@ -34,23 +40,24 @@
 </template>
 
 <script>
-import { QImg } from 'quasar'
+import { QBtn, QImg } from 'quasar'
 
 export default {
   name: 'Introduction',
   components: {
+    QBtn,
     QImg
   },
   data () {
     return {}
   },
   mounted () {
-    document.getElementById('q-app').classList.add('block-overflow')
-    document.getElementsByClassName('stem')[0].classList.add('rain')
-    setTimeout(() => {
-      document.getElementById('q-app').classList.remove('block-overflow')
-      document.getElementsByClassName('stem')[0].classList.remove('rain')
-    }, 1200)
+    // document.getElementById('q-app').classList.add('block-overflow')
+    // document.getElementsByClassName('stem')[0].classList.add('rain')
+    // setTimeout(() => {
+    //   document.getElementById('q-app').classList.remove('block-overflow')
+    //   document.getElementsByClassName('stem')[0].classList.remove('rain')
+    // }, 2000)
   }
 }
 </script>
@@ -67,8 +74,9 @@ export default {
   height 100vh
   z-index 0
   padding 0 40px
-  background-image url('../../assets/forest.jpg')
+  background-image url('../../assets/growing-plant.jpg')
   background-size cover
+  background-position bottom
   &:before
     z-index -1
     content ''
@@ -78,7 +86,7 @@ export default {
     left 0
     right 0
     opacity 0.65
-    background linear-gradient(120deg, $primary, $secondary 120%)
+    background-image linear-gradient(120deg, $primary, $quaternary 100%)
 
 .introduction__header
   height 20vh
@@ -108,25 +116,41 @@ export default {
     &:first-of-type
       margin 0
 
+.header__menu-button
+  display none
+  @media (max-width: 890px)
+    display block
+  &:hover
+    color white
+
 .introduction__content
   align-self center
   max-width 1100px
   p
     font-size 16px
-  color $grey-3
+  color $grey-2
   width 100%
   flex 1
+  @media(max-width: 890px)
+    flex-direction column
 .content__simple-description
   width 60%
   @media (max-width: 890px)
     width 100%
+    text-align center
+    h2
+      font-size 3em
   h2
+    margin-top 0px
     font-weight bold
 
 .content__growing-plant-animation
   width 40%
   @media (max-width: 890px)
     width 100%
+    flex 1
+    .wrapper
+      justify-content center
   display flex
   justify-content flex-end
 
