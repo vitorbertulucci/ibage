@@ -1,14 +1,18 @@
 <template lang="pug">
   q-page.flex.column
-    header-home
+    introduction
+    //- header-home
 </template>
 
 <script>
 import HeaderHome from '../components/general/Header'
+import Introduction from '../components/topics/Introduction'
+
 export default {
   name: 'PageIndex',
   components: {
-    HeaderHome
+    HeaderHome,
+    Introduction
   }
 }
 </script>
