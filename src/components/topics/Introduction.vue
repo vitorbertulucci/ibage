@@ -72,11 +72,13 @@ export default {
 .introduction
   flex 1
   height 100vh
+  max-height 768px
   z-index 0
   padding 0 40px
   background-image url('../../assets/growing-plant.jpg')
   background-size cover
   background-position bottom
+
   &:before
     z-index -1
     content ''
@@ -87,6 +89,7 @@ export default {
     right 0
     opacity 0.65
     background-image linear-gradient(120deg, $primary, $quaternary 100%)
+    max-height 768px
 
 .introduction__header
   height 20vh

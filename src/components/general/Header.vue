@@ -17,8 +17,13 @@
 </template>
 
 <script>
+import { QImg } from 'quasar'
+
 export default {
-  name: 'HomeHeader'
+  name: 'HomeHeader',
+  components: {
+    QImg
+  }
 }
 </script>
 
