@@ -80,6 +80,7 @@ export default {
   background-position bottom
 
   &:before
+    height 100vh
     z-index -1
     content ''
     position absolute

@@ -2,6 +2,7 @@
   q-page.flex.column
     introduction
     //- header-home
+    about-us
     div.temporary
     footer-home
 </template>
@@ -9,6 +10,7 @@
 <script>
 import HeaderHome from '../components/general/Header'
 import Introduction from '../components/topics/Introduction'
+import AboutUs from '../components/topics/AboutUs'
 import FooterHome from '../components/general/Footer'
 
 export default {
@@ -16,6 +18,7 @@ export default {
   components: {
     HeaderHome,
     Introduction,
+    AboutUs,
     FooterHome
   }
 }
