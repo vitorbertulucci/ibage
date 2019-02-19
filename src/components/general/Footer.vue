@@ -2,7 +2,7 @@
   footer.footer-home
     div.footer-home__content.flex.items-center.justify-center
       div.footer-home__content__container.flex.justify-between
-        img(src="../../assets/ibage.png")
+        img(src="../../assets/img/ibage.png")
         div.links.flex.justify-between
           div(v-for="l in 3").links__item.column.justify-center
             h4 Lorem Ipsum

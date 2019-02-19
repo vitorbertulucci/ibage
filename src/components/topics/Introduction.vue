@@ -2,7 +2,7 @@
   div.introduction.column
     div.introduction__header.flex.justify-center
       div.header__items.flex.full-width.justify-between.items-center
-        q-img(src="../../assets/ibage.png").header__logo
+        q-img(src="../../assets/img/ibage.png").header__logo
         nav.header__nav.flex
           a(href="#") Quem Somos
           a(href="#") Produtos e Serviços
@@ -75,7 +75,7 @@ export default {
   max-height 768px
   z-index 0
   padding 0 40px
-  background-image url('../../assets/growing-plant.jpg')
+  background-image url('../../assets/img/growing-plant.jpg')
   background-size cover
   background-position bottom
 

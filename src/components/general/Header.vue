@@ -1,7 +1,7 @@
 <template lang="pug">
   header.header-home.flex.items-center.justify-center.shadow-global
     div.header-home__container.flex.items-center.justify-between
-      q-img(src="../../assets/ibage.png").header-home__container__logo
+      q-img(src="../../assets/img/ibage.png").header-home__container__logo
       nav.header-home__container__nav.flex
         a(href="#") Quem Somos
         a(href="#") Produtos e Serviços
