@@ -1,6 +1,7 @@
 <template lang="pug">
-  q-page.flex.column
-    introduction
+  q-page.column
+    //- introduction
+    introduction-1
     //- header-home
     div.temporary
     footer-home
@@ -9,6 +10,7 @@
 <script>
 import HeaderHome from '../components/general/Header'
 import Introduction from '../components/topics/Introduction'
+import Introduction1 from '../components/introduction/Introduction1'
 import FooterHome from '../components/general/Footer'
 
 export default {
@@ -16,6 +18,7 @@ export default {
   components: {
     HeaderHome,
     Introduction,
+    Introduction1,
     FooterHome
   }
 }
