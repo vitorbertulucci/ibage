@@ -1,14 +1,14 @@
 <template lang="pug">
   footer.footer-home
-    div.footer-home__content.flex.items-center.justify-center
-      div.footer-home__content__container.flex.justify-between
-        img(src="../../assets/img/ibage.png")
-        div.links.flex.justify-between
-          div(v-for="l in 3").links__item.column.justify-center
-            h4 Lorem Ipsum
-            a(href="#") Lorem Ipsum
-            a(href="#") Lorem Ipsum
-            a(href="#") Lorem Ipsum
+    //- div.footer-home__content.flex.items-center.justify-center
+    //-   div.footer-home__content__container.flex.justify-between
+    //-     img(src="../../assets/img/ibage.png")
+    //-     div.links.flex.justify-between
+    //-       div(v-for="l in 3").links__item.column.justify-center
+    //-         h4 Lorem Ipsum
+    //-         a(href="#") Lorem Ipsum
+    //-         a(href="#") Lorem Ipsum
+    //-         a(href="#") Lorem Ipsum
     div.footer-home__copyright.flex.items-center.justify-center
       p Ibage 2019 © Todos os direitos reservados
 </template>
