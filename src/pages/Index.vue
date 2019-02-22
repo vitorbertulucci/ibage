@@ -1,7 +1,7 @@
 <template lang="pug">
   q-page.column
-    //- introduction
-    introduction-1
+    introduction
+    //- introduction-1
     //- header-home
     div.temporary
     contact
@@ -28,23 +28,8 @@ export default {
 </script>
 
 <style lang="stylus">
-@font-face
-  font-family 'Trebuchet MS'
-  src url(../assets/fonts/trebuc.ttf)
-  font-weight normal
-  font-style normal
-
-@font-face
-  font-family 'Trebuchet MS'
-  src url(../assets/fonts/trebucbd.ttf)
-  font-weight bold
-  font-style normal
-
 *
   font-family 'Trebuchet MS'
-
-.shadow-global
-  box-shadow 0 10px 20px rgba(71,80,89,.15)
 
 .temporary
   margin 500px 0

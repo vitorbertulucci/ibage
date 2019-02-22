@@ -93,6 +93,7 @@ export default {
 
 .contact__title
   margin-bottom 40px
+
 .content__social-media
   p
     font-size 16px
