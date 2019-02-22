@@ -2,9 +2,9 @@
   div.introduction.flex
     div.introduction__bg-left
     div.introduction__bg-right
-      q-img(src="../../assets/img/forest.jpg")
+      q-img(src="../../assets/img/plants.jpeg")
     div.introduction__content.flex
-      div.introduction__content__left.column.items-start
+      div.introduction__content__left.column.items-start.shadow-global
         img(src="../../assets/img/ibage-logo.png").logo
         h1
           | Fuel creativity.
@@ -14,7 +14,13 @@
           | See the world.
         p Design Exchange is a once-in-a-lifetime opportunity for senior designers from the world’s leading companies to experience a new city through the lens of design.
         q-btn(color="primary" size="20px" unelevated) Lorem Ipsum
-      div.introduction__content__right
+      div.introduction__content__right.column
+        nav.introduction__content__right__nav.flex
+          a(href="#") Quem Somos
+          a(href="#") Produtos e Serviços
+          a(href="#") Notícias
+          a(href="#") Parceiros
+          a(href="#") Contato
 </template>
 
 <script>
@@ -51,6 +57,7 @@ export default {
   width 100%
   height 100vh
   position relative
+  overflow hidden
 
   &__bg-left
     width 30%
@@ -131,6 +138,50 @@ export default {
 
     &__right
       flex 1
+      position relative
+
+      &:before
+        z-index 1
+        content ''
+        position absolute
+        bottom 0
+        right 0
+        background $grey-10
+        width 425px
+        height 300px
+        background-image url(../../assets/img/colors.png)
+        background-repeat no-repeat
+        background-size cover
+        transform rotate(134deg)
+        margin-right -173px
+        margin-bottom -104px
+
+      &__nav
+        font-size 15px
+        width 562px
+        z-index 10
+        position absolute
+        top 0
+        right 0
+        margin 45px 60px
+
+        a
+          margin-left 25px
+          display block
+          font-weight bold
+          color white
+          text-decoration none
+          transition all .2s ease
+          text-transform uppercase
+
+          &:first-of-type
+            margin 0
+
+          &:visited
+            color white
+
+          &:hover
+            color $tertiary
 </style>
 
 <style lang="stylus" scoped>

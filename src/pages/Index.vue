@@ -28,9 +28,12 @@ export default {
 </script>
 
 <style lang="stylus">
+@import '~quasar-variables'
 *
   font-family 'Trebuchet MS'
 
 .temporary
-  margin 500px 0
+  padding 500px 0
+  background $grey-2
+  width 100%
 </style>
