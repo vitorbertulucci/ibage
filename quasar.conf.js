@@ -5,7 +5,8 @@ module.exports = function (ctx) {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     boot: [
-      'i18n'
+      'i18n',
+      'addressbar-color'
     ],
 
     css: [
@@ -46,7 +47,9 @@ module.exports = function (ctx) {
 
       // Quasar plugins
       plugins: [
-        'Notify'
+        'Notify',
+        'AddressbarColor',
+        'Meta'
       ]
 
       // iconSet: 'ionicons-v4'
