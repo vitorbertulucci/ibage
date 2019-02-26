@@ -3,6 +3,7 @@
     div.introduction__bg-left
     div.introduction__bg-right
       q-img(src="../../assets/img/plants.jpeg")
+      q-btn(icon="menu" round flat).btn-menu
     div.introduction__content.flex
       div.introduction__content__left.column.items-start.shadow-global
         img(src="../../assets/img/ibage-logo.png").logo
@@ -13,14 +14,15 @@
           br
           | See the world.
         p Design Exchange is a once-in-a-lifetime opportunity for senior designers from the world’s leading companies to experience a new city through the lens of design.
-        q-btn(color="primary" size="20px" unelevated) Lorem Ipsum
-      div.introduction__content__right.column
+        q-btn(color="primary" unelevated) Lorem Ipsum
+      div.introduction__content__right.column.items-end
         nav.introduction__content__right__nav.flex
           a(href="#") Quem Somos
           a(href="#") Produtos e Serviços
           a(href="#") Notícias
           a(href="#") Parceiros
           a(href="#") Contato
+        q-btn(icon="menu" round flat size="20px").introduction__content__right__btn-mobile
 </template>
 
 <script>
@@ -80,6 +82,23 @@ export default {
         opacity 0.55
         background $grey-10
 
+    .btn-menu
+      display none
+      z-index 10
+      color white
+      font-size 20px
+      @media(max-width: 965px)
+        display block
+        position absolute
+        right 45px
+        top 45px
+      @media(max-width: 965px)
+        font-size 18px
+        top 50px
+        right 35px
+      @media(max-width: 532px)
+        top 45px
+
   &__content
     position absolute
     width 100%
@@ -94,6 +113,15 @@ export default {
       justify-content center
       @media(max-height: 870px), (max-width: 1480px)
         padding 45px
+      @media(max-width: 965px)
+        width 100%
+        clip-path polygon(60% 0%, 100% 40%, 100% 100%, 0 100%, 0 0)
+      @media(max-width: 640px)
+        clip-path polygon(60% 0%, 100% 35%, 100% 100%, 0 100%, 0 0)
+      @media(max-width: 450px)
+        clip-path polygon(60% 0%, 100% 27%, 100% 100%, 0 100%, 0 0)
+      @media(max-width: 414px)
+        clip-path polygon(50% 0%, 100% 30%, 100% 100%, 0 100%, 0 0)
 
       .logo
         max-width 140px
@@ -104,6 +132,8 @@ export default {
         @media(max-height: 870px), (max-width: 1480px)
           margin 30px 45px
           max-width 120px
+        @media(max-width: 532px)
+          max-width 100px
 
       h1
         font-weight bold
@@ -119,6 +149,14 @@ export default {
         @media (max-width: 1100px)
           font-size 54px
           line-height 60px
+        @media(max-width: 520px)
+          font-size 42px
+          line-height 48px
+        @media(max-width: 430px)
+          font-size 38px
+          line-height 44px
+        @media(max-width: 414px)
+          line-height 39px
 
       p
         max-width 63%
@@ -128,17 +166,27 @@ export default {
           margin 0 0 30px 0
           font-size 18px
           max-width 65%
+        @media(max-width: 965px)
+          max-width 100%
+        @media(max-width: 520px)
+          font-size 16px
+          line-height 22px
 
       .q-btn
         margin-left 35px
         padding 10px 30px
         border-radius 0
+        font-size 20px
         @media(max-height: 870px), (max-width: 1480px)
           margin-left 0
+        @media(max-width: 520px)
+          font-size 16px
 
     &__right
       flex 1
       position relative
+      @media(max-width: 965px)
+        display none
 
       &:before
         z-index 1
@@ -152,8 +200,8 @@ export default {
         background-image url(../../assets/img/colors.png)
         background-repeat no-repeat
         background-size cover
-        transform rotate(134deg)
-        margin-right -173px
+        transform rotate(131deg)
+        margin-right -188px
         margin-bottom -104px
 
       &__nav
@@ -164,6 +212,8 @@ export default {
         top 0
         right 0
         margin 45px 60px
+        @media(max-width: 1140px)
+          display none
 
         a
           margin-left 25px
@@ -182,6 +232,12 @@ export default {
 
           &:hover
             color $tertiary
-</style>
 
-<style lang="stylus" scoped>
+      &__btn-mobile
+        display none
+        z-index 3
+        color white
+        margin 45px
+        @media(max-width: 1140px)
+          display block
+</style>
