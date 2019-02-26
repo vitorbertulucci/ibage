@@ -1,7 +1,7 @@
 <template lang="pug">
   q-page.column
-    //- introduction
-    introduction-1
+    introduction
+    //- introduction-1
     //- header-home
     div.temporary
     contact
@@ -23,29 +23,32 @@ export default {
     Introduction1,
     Contact,
     FooterHome
+  },
+  meta () {
+    return {
+      title: this.title,
+      meta: {
+        description: { name: 'description', content: 'O IBAGE é uma entidade privada sem fins lucrativos que visa contribuir para Desenvolvimento Sustentável dos municípios e promover a melhoria da qualidade de vida da população local' },
+        keywords: { name: 'keywords', content: 'IBAGE sustentabilidade meio ambiente sem fins lucrativos' },
+        equiv: { 'http-equiv': 'Content-Type', content: 'text/html; charset=UTF-8' }
+      }
+    }
+  },
+  data () {
+    return {
+      title: 'IBAGE | Instituto Brasileiro de Ação Municipal e Gestão Pública'
+    }
   }
 }
 </script>
 
 <style lang="stylus">
-@font-face
-  font-family 'Trebuchet MS'
-  src url(../assets/fonts/trebuc.ttf)
-  font-weight normal
-  font-style normal
-
-@font-face
-  font-family 'Trebuchet MS'
-  src url(../assets/fonts/trebucbd.ttf)
-  font-weight bold
-  font-style normal
-
+@import '~quasar-variables'
 *
   font-family 'Trebuchet MS'
 
-.shadow-global
-  box-shadow 0 10px 20px rgba(71,80,89,.15)
-
 .temporary
-  margin 500px 0
+  padding 500px 0
+  background $grey-2
+  width 100%
 </style>

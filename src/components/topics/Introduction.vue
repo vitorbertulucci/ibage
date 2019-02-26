@@ -1,345 +1,243 @@
 <template lang="pug">
-  div.introduction.column
-    div.introduction__header.flex.justify-center
-      div.header__items.flex.full-width.justify-between.items-center
-        q-img(src="../../assets/img/ibage.png").header__logo
-        nav.header__nav.flex
+  div.introduction.flex
+    div.introduction__bg-left
+    div.introduction__bg-right
+      q-img(src="../../assets/img/plants.jpeg")
+      q-btn(icon="menu" round flat).btn-menu
+    div.introduction__content.flex
+      div.introduction__content__left.column.items-start.shadow-global
+        img(src="../../assets/img/ibage-logo.png").logo
+        h1
+          | Fuel creativity.
+          br
+          | Find community.
+          br
+          | See the world.
+        p Design Exchange is a once-in-a-lifetime opportunity for senior designers from the world’s leading companies to experience a new city through the lens of design.
+        q-btn(color="primary" unelevated) Lorem Ipsum
+      div.introduction__content__right.column.items-end
+        nav.introduction__content__right__nav.flex
           a(href="#") Quem Somos
           a(href="#") Produtos e Serviços
           a(href="#") Notícias
           a(href="#") Parceiros
-          a(href="#") Contatos
-        q-btn(
-          icon="mdi-menu"
-          color="grey-3"
-          round
-          flat
-        ).header__menu-button
-    div.introduction__content.flex.no-wrap
-      div.content__simple-description
-        h2 Lorem Ipsum is simply dummy text of the printing
-        p Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae
-      //- div.content__growing-plant-animation
-        div.wrapper
-          div.box
-            div.stem
-              div.leaf.leaf01
-                div.line
-              div.leaf.leaf02
-                div.line
-              div.leaf.leaf03
-                div.line
-              div.leaf.leaf04
-                div.line
-              div.leaf.leaf05
-                div.line
-              div.leaf.leaf06
-                div.line
-            div.pot
-            div.pot-top
+          a(href="#") Contato
+        q-btn(icon="menu" round flat size="20px").introduction__content__right__btn-mobile
 </template>
 
 <script>
-import { QBtn, QImg } from 'quasar'
+import { QImg } from 'quasar'
 
 export default {
   name: 'Introduction',
   components: {
-    QBtn,
     QImg
   },
   data () {
-    return {}
-  },
-  mounted () {
-    // document.getElementById('q-app').classList.add('block-overflow')
-    // document.getElementsByClassName('stem')[0].classList.add('rain')
-    // setTimeout(() => {
-    //   document.getElementById('q-app').classList.remove('block-overflow')
-    //   document.getElementsByClassName('stem')[0].classList.remove('rain')
-    // }, 2000)
+    return {
+      slide: 1,
+      photos: [
+        {
+          key: 1,
+          src: '../../assets/img/forest.jpg'
+        },
+        {
+          key: 2,
+          src: '../../assets/img/growing-plant.jpg'
+        }
+      ]
+    }
   }
 }
 </script>
 
-<style lang="stylus">
-.block-overflow
-  overflow hidden !important
-</style>
-
 <style lang="stylus" scoped>
 @import '~quasar-variables'
+
 .introduction
-  flex 1
+  background $grey-6
+  width 100%
   height 100vh
-  max-height 768px
-  z-index 0
-  padding 0 40px
-  background-image url('../../assets/img/growing-plant.jpg')
-  background-size cover
-  background-position bottom
+  position relative
+  overflow hidden
 
-  &:before
-    z-index -1
-    content ''
-    position absolute
-    top 0
-    bottom 0
-    left 0
-    right 0
-    opacity 0.65
-    background-image linear-gradient(120deg, $primary, $quaternary 100%)
-    max-height 768px
+  &__bg-left
+    width 30%
+    background white
 
-.introduction__header
-  height 20vh
-  margin 20px 0
-  .header__items
-    max-width 1100px
-
-.header__logo
-  filter brightness(0) invert(1)
-  width 100vh
-  max-width 100px
-
-.header__nav
-  font-size 16px
-  @media (max-width: 890px)
-    display none
-  a
-    margin-left 30px
-    display block
-    font-weight 700
-    color $grey-2
-    text-decoration none
-    transition all .2s ease
-    &:hover
-      color white
-
-    &:first-of-type
-      margin 0
-
-.header__menu-button
-  display none
-  @media (max-width: 890px)
-    display block
-  &:hover
-    color white
-
-.introduction__content
-  align-self center
-  max-width 1100px
-  p
-    font-size 16px
-  color $grey-2
-  width 100%
-  flex 1
-  @media(max-width: 890px)
-    flex-direction column
-.content__simple-description
-  width 60%
-  @media (max-width: 890px)
-    width 100%
-    text-align center
-    h2
-      font-size 3em
-  h2
-    margin-top 0px
-    font-weight bold
-
-.content__growing-plant-animation
-  width 40%
-  @media (max-width: 890px)
-    width 100%
+  &__bg-right
     flex 1
-    .wrapper
+
+    .q-img
+      height 100%
+
+      &:before
+        z-index 1
+        content ''
+        position absolute
+        top 0
+        bottom 0
+        left 0
+        right 0
+        opacity 0.55
+        background $grey-10
+
+    .btn-menu
+      display none
+      z-index 10
+      color white
+      font-size 20px
+      @media(max-width: 965px)
+        display block
+        position absolute
+        right 45px
+        top 45px
+      @media(max-width: 965px)
+        font-size 18px
+        top 50px
+        right 35px
+      @media(max-width: 532px)
+        top 45px
+
+  &__content
+    position absolute
+    width 100%
+    height 100%
+
+    &__left
+      z-index 2
+      width 59%
+      background white
+      clip-path polygon(55% 0%, 100% 50%, 55% 100%, 0 100%, 0 0)
+      padding 45px 60px
       justify-content center
-  display flex
-  justify-content flex-end
+      @media(max-height: 870px), (max-width: 1480px)
+        padding 45px
+      @media(max-width: 965px)
+        width 100%
+        clip-path polygon(60% 0%, 100% 40%, 100% 100%, 0 100%, 0 0)
+      @media(max-width: 640px)
+        clip-path polygon(60% 0%, 100% 35%, 100% 100%, 0 100%, 0 0)
+      @media(max-width: 450px)
+        clip-path polygon(60% 0%, 100% 27%, 100% 100%, 0 100%, 0 0)
+      @media(max-width: 414px)
+        clip-path polygon(50% 0%, 100% 30%, 100% 100%, 0 100%, 0 0)
 
-.wrapper {
-  // position:absolute;
-  // bottom:0;
-  width:100%;
-  display flex
-  flex 1
-  display flex
-  justify-content flex-end
-  align-items flex-end
-}
+      .logo
+        max-width 140px
+        position absolute
+        top 0
+        left 0
+        margin 45px 60px
+        @media(max-height: 870px), (max-width: 1480px)
+          margin 30px 45px
+          max-width 120px
+        @media(max-width: 532px)
+          max-width 100px
 
-.box {
-  position:relative;
-  // margin:auto;
-  display:block;
-  max-width:500px;
-  max-height:500px;
-  background:none;
-  width 100%
-  height 100%
-  display flex
-  flex-direction column-reverse
-}
+      h1
+        font-weight bold
+        font-size 70px
+        line-height 80px
+        margin 0 0 45px 35px
+        @media(max-height: 870px), (max-width: 1480px)
+          line-height 72px
+          margin 15% 0 30px 0
+        @media (max-width: 1215px)
+          font-size 66px
+          line-height 72px
+        @media (max-width: 1100px)
+          font-size 54px
+          line-height 60px
+        @media(max-width: 520px)
+          font-size 42px
+          line-height 48px
+        @media(max-width: 430px)
+          font-size 38px
+          line-height 44px
+        @media(max-width: 414px)
+          line-height 39px
 
-.pot {
-  // position:absolute;
-  width:50%;
-  max-width 150px
-  height:20%;
-  margin 0 auto
-  bottom:0;
-  // left:40%;
-  background:#FCAA67;
-  -webkit-clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
-  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
-  box-shadow: inset 0 16px 20px rgba(0,0,0,0.3);
-}
+      p
+        max-width 63%
+        font-size 20px
+        margin 0 0 45px 35px
+        @media(max-height: 870px), (max-width: 1480px)
+          margin 0 0 30px 0
+          font-size 18px
+          max-width 65%
+        @media(max-width: 965px)
+          max-width 100%
+        @media(max-width: 520px)
+          font-size 16px
+          line-height 22px
 
-.pot-top {
-  z-index 20
-  // position:absolute;
-  width:52%;
-  height:5%;
-  bottom:17%;
-  max-width 160px
-  // left:39%;
-  margin 0 auto
-  background:#FCAA67;
-  border-radius:3px;
-}
+      .q-btn
+        margin-left 35px
+        padding 10px 30px
+        border-radius 0
+        font-size 20px
+        @media(max-height: 870px), (max-width: 1480px)
+          margin-left 0
+        @media(max-width: 520px)
+          font-size 16px
 
-.stem {
-  position:absolute;
-  width:2%;
-  height:65%;
-  left:49%;
-  bottom:20%;
-  background:#70B77E;
-}
+    &__right
+      flex 1
+      position relative
+      @media(max-width: 965px)
+        display none
 
-.leaf {
-  position:absolute;
-  width:700%;
-  height:10%;
-  border-radius:50%;
-  background:#70B77E;
-}
+      &:before
+        z-index 1
+        content ''
+        position absolute
+        bottom 0
+        right 0
+        background $grey-10
+        width 425px
+        height 300px
+        background-image url(../../assets/img/colors.png)
+        background-repeat no-repeat
+        background-size cover
+        transform rotate(131deg)
+        margin-right -188px
+        margin-bottom -104px
 
-.leaf .line {
-  position:absolute;
-  width:80%;
-  height:1%;
-  background:rgba(0,0,0,0.1);
-  top:48%;
-}
+      &__nav
+        font-size 15px
+        width 562px
+        z-index 10
+        position absolute
+        top 0
+        right 0
+        margin 45px 60px
+        @media(max-width: 1140px)
+          display none
 
-.leaf01 {
-  top:70%;
-  left:50%;
-  transform:rotate(-25deg);
-}
+        a
+          margin-left 25px
+          display block
+          font-weight bold
+          color white
+          text-decoration none
+          transition all .2s ease
+          text-transform uppercase
 
-.leaf02 {
-  top:50%;
-  right:50%;
-  transform:rotate(205deg);
-}
+          &:first-of-type
+            margin 0
 
-.leaf03 {
-  top:30%;
-  left:50%;
-  transform:rotate(-25deg);
-}
+          &:visited
+            color white
 
-.leaf04 {
-  top:20%;
-  right:50%;
-  transform:rotate(205deg);
-}
+          &:hover
+            color $tertiary
 
-.leaf05 {
-  top:-12%;
-  left:-120%;
-  transform:rotate(-60deg);
-}
-
-.leaf06 {
-  top:-6%;
-  right:22%;
-  transform:rotate(195deg);
-}
-
-/* --- ANIMATION --- */
-
-.stem, .leaf {
-  animation-duration: 1.2s!important;
-  animation-fill-mode:forwards;
-}
-
-.stem.rain {
-  animation: grow 1s linear 1;
-}
-
-@keyframes grow {
-  0% {
-    bottom:-40%;
-    width:1%;
-  }
-  100% {
-    bottom:20%;
-    width:2%;
-  }
-}
-
-.stem.rain .leaf {
-  animation: leafGrow 1s linear 1;
-  animation-fill-mode:forwards;
-}
-
-@keyframes leafGrow {
-  0% {
-    width:0%;
-    height:0%;
-  }
-  100% {
-    width:700%;
-    height:10%;
-  }
-}
-
-.stem.rain .leaf05 {
-  animation: topLeafRight 1s linear 1;
-}
-
-@keyframes topLeafRight {
-  0% {
-    top:5%;
-    width:0%;
-    height:0%;
-    left:10%;
-  }
-  100% {
-    width:700%;
-    height:10%;
-    top:-17%;
-    left:-120%;
-  }
-}
-
-.stem.rain .leaf06 {
-  animation: topLeafLeft 1s linear 1;
-}
-
-@keyframes topLeafLeft {
-  0% {
-    top:0%;
-    width:0%;
-    height:0%;
-  }
-  100% {
-    width:700%;
-    height:10%;
-    top:-9%;
-  }
-}
+      &__btn-mobile
+        display none
+        z-index 3
+        color white
+        margin 45px
+        @media(max-width: 1140px)
+          display block
 </style>
