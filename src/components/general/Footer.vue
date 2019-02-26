@@ -102,6 +102,6 @@ export default {
       color #497564
       max-width 1110px
       margin 0
-      @media (max-width: 414px)
+      @media (max-width: 540px)
         text-align center
 </style>
