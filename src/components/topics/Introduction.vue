@@ -85,7 +85,7 @@ export default {
 
     .btn-menu
       display none
-      z-index 10
+      z-index 1000
       color white
       font-size 20px
       @media(max-width: 965px)

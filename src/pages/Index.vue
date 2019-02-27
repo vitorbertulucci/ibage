@@ -1,5 +1,6 @@
 <template lang="pug">
   q-page.column
+    mobile-navbar
     introduction
     header-home
     about-us
@@ -8,6 +9,7 @@
 </template>
 
 <script>
+import MobileNavbar from '../components/general/MobileNavbar'
 import HeaderHome from '../components/general/Header'
 import Introduction from '../components/topics/Introduction'
 import AboutUs from '../components/topics/AboutUs'
@@ -17,6 +19,7 @@ import FooterHome from '../components/general/Footer'
 export default {
   name: 'PageIndex',
   components: {
+    MobileNavbar,
     HeaderHome,
     Introduction,
     AboutUs,
