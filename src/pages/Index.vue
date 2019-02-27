@@ -1,8 +1,7 @@
 <template lang="pug">
   q-page.column
     introduction
-    //- introduction-1
-    //- header-home
+    header-home
     div.temporary
     contact
     footer-home
@@ -11,7 +10,6 @@
 <script>
 import HeaderHome from '../components/general/Header'
 import Introduction from '../components/topics/Introduction'
-import Introduction1 from '../components/introduction/Introduction1'
 import Contact from '../components/topics/Contact'
 import FooterHome from '../components/general/Footer'
 
@@ -20,7 +18,6 @@ export default {
   components: {
     HeaderHome,
     Introduction,
-    Introduction1,
     Contact,
     FooterHome
   },

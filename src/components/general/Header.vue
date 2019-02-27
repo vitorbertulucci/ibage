@@ -1,19 +1,24 @@
 <template lang="pug">
-  header.header-home.flex.items-center.justify-center.shadow-global
-    div.header-home__container.flex.items-center.justify-between
-      q-img(src="../../assets/img/ibage.png").header-home__container__logo
-      nav.header-home__container__nav.flex
-        a(href="#") Quem Somos
-        a(href="#") Produtos e Serviços
-        a(href="#") Notícias
-        a(href="#") Parceiros
-        a(href="#") Contatos
-      q-btn(
-        icon="mdi-menu"
-        color="primary"
-        round
-        flat
-      ).header-home__container__menu-button
+  transition(
+    appear
+    enter-active-class="animated slideInDown"
+    leave-active-class="animated slideOutUp"
+  )
+    header(v-show="visibility" v-scroll="scrolled").header-home.flex.items-center.justify-center.shadow-global.animate-pop
+      div.header-home__container.flex.items-center.justify-between
+        q-img(src="../../assets/img/ibage-logo.png").header-home__container__logo
+        nav.header-home__container__nav.flex
+          a(href="#") Quem Somos
+          a(href="#") Produtos e Serviços
+          a(href="#") Notícias
+          a(href="#") Parceiros
+          a(href="#") Contatos
+        q-btn(
+          icon="mdi-menu"
+          color="primary"
+          round
+          flat
+        ).header-home__container__menu-button
 </template>
 
 <script>
@@ -23,6 +28,17 @@ export default {
   name: 'HomeHeader',
   components: {
     QImg
+  },
+  data () {
+    return {
+      visibility: false
+    }
+  },
+  methods: {
+    scrolled (position) {
+      console.log(position)
+      this.visibility = position >= 140
+    }
   }
 }
 </script>
@@ -31,6 +47,7 @@ export default {
 @import '~quasar-variables'
 
 .header-home
+  z-index 10
   width 100%
   height 90px
   background white

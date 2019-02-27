@@ -42,7 +42,8 @@ module.exports = function (ctx) {
       ],
 
       directives: [
-        'Ripple'
+        'Ripple',
+        'Scroll'
       ],
 
       // Quasar plugins
@@ -86,7 +87,10 @@ module.exports = function (ctx) {
     },
 
     // animations: 'all' --- includes all animations
-    animations: 'all',
+    animations: [
+      'slideInDown',
+      'slideOutUp'
+    ],
 
     ssr: {
       pwa: false
