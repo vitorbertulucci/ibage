@@ -14,7 +14,7 @@
           br
           | See the world.
         p Design Exchange is a once-in-a-lifetime opportunity for senior designers from the world’s leading companies to experience a new city through the lens of design.
-        q-btn(color="primary" unelevated) Lorem Ipsum
+        q-btn(color="primary" unelevated no-caps) Lorem Ipsum
       div.introduction__content__right.column.items-end
         nav.introduction__content__right__nav.flex
           a(href="#") Quem Somos

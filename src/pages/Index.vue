@@ -2,7 +2,7 @@
   q-page.column
     introduction
     header-home
-    div.temporary
+    about-us
     contact
     footer-home
 </template>
@@ -10,6 +10,7 @@
 <script>
 import HeaderHome from '../components/general/Header'
 import Introduction from '../components/topics/Introduction'
+import AboutUs from '../components/topics/AboutUs'
 import Contact from '../components/topics/Contact'
 import FooterHome from '../components/general/Footer'
 
@@ -18,6 +19,7 @@ export default {
   components: {
     HeaderHome,
     Introduction,
+    AboutUs,
     Contact,
     FooterHome
   },
@@ -43,9 +45,4 @@ export default {
 @import '~quasar-variables'
 *
   font-family 'Trebuchet MS'
-
-.temporary
-  padding 500px 0
-  background $grey-2
-  width 100%
 </style>
