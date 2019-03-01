@@ -15,7 +15,7 @@
           h4.item__title {{ item.title }}
           p.item__description {{ item.description }}
       .products__actions.flex.items-center.justify-center
-        q-btn(color="primary" unelevated no-caps) Lorem Ipsum
+        q-btn(color="primary" unelevated no-caps).btn Lorem Ipsum
 </template>
 
 <script>
@@ -42,7 +42,7 @@ export default {
 
   &__container
     max-width 1110px
-    padding 45px 0 55px 0
+    padding 0px 0 55px 0
     @media (max-width: 1300px)
       padding 45px 45px 55px 45px
     @media (max-width: 768px)
@@ -54,7 +54,7 @@ export default {
     @media (max-width: 1300px)
       padding 45px 45px 55px 45px
     @media (max-width: 768px)
-      padding 45px 30px 45px 30px
+      padding 0 30px 45px 30px
 
 .title
   text-align center
@@ -85,8 +85,6 @@ export default {
     background #01442c
 
 .products__content
-  margin-top 45px
-  padding 16px 0
   display grid
   grid-template-columns auto 33% auto
   grid-gap 30px
@@ -95,12 +93,13 @@ export default {
     flex-direction column
     align-items center
     .content__items
-      padding-bottom 30px
+      margin-top 45px
       max-width none
 
 .content__items
   position relative
   max-width 300px
+  margin 0 auto
 
 .logo-0
   background $primary
@@ -121,6 +120,9 @@ export default {
   flex 1
 
 .products__actions
-  margin-top 45px
-  // margin-bottom 45px
+  .btn
+    border-radius 0
+    font-size 24px
+    @media (max-width: 540px)
+      font-size 22px
 </style>
