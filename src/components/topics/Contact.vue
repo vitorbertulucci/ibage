@@ -1,9 +1,9 @@
 <template lang="pug">
   div.contact.column.items-center
     .contact__container
-      .contact__title.flex
+      .contact__title.flex.justify-center
         h3.title Contato
-        .underline.full-width.row
+        .underline.full-width.row.justify-center
           .one
           .two
           .three
@@ -86,7 +86,7 @@ export default {
   &__content
     flex 1
     display grid
-    margin 0 auto 20px auto
+    margin 0 auto 50px auto
     grid-column-gap 16px
     grid-template-columns 45% auto
     @media (max-width: 890px)
@@ -98,7 +98,7 @@ export default {
         padding-bottom 20px
 
 .contact__title
-  margin-bottom 40px
+  margin-bottom 45px
   @media (max-width: 540px)
     justify-content center
 
@@ -137,7 +137,7 @@ export default {
     margin 0 auto 20px auto
 
 .title
-  margin-bottom 10px
+  margin-bottom 20px
   @media (max-width: 540px)
     font-size 40px
 
@@ -147,7 +147,7 @@ export default {
     justify-content center
   *
     height 6px
-    width 34px
+    width 28px
     @media (max-width: 540px)
       height 6px
       width 28px

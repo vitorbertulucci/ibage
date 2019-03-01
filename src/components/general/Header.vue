@@ -36,7 +36,6 @@ export default {
   },
   methods: {
     scrolled (position) {
-      console.log(position)
       this.visibility = position >= 140
     }
   }
