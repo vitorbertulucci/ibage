@@ -8,11 +8,10 @@
 
 <script>
 import {
-  scroll,
   QSeparator
 } from 'quasar'
 
-const { getScrollTarget, setScrollPosition } = scroll
+import mixins from '../mixins'
 
 import { mapActions } from 'vuex'
 
@@ -21,28 +20,13 @@ export default {
   components: {
     QSeparator
   },
+  mixins: [mixins],
   data () {
     return {
-      links: [
-        { title: 'Quem Somos', ref: '#' },
-        { title: 'Produtos e Serviços', ref: '#' },
-        { title: 'Notícias', ref: '#' },
-        { title: 'Parceiros', ref: '#' },
-        { title: 'Contatos', ref: 'contact' }
-      ]
     }
   },
   methods: {
-    ...mapActions('menuMobile', [ 'setViewState' ]),
-    scrollElement (link) {
-      let el = document.getElementById(link.ref)
-      let target = getScrollTarget(el)
-      let correctionValue = window.innerWidth <= 640 ? 65 : 90
-      let offset = el.offsetTop - correctionValue
-      let duration = 500
-      setScrollPosition(target, offset, duration)
-      this.setViewState(false)
-    }
+    ...mapActions('menuMobile', [ 'setViewState' ])
   }
 }
 </script>

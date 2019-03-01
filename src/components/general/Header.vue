@@ -8,11 +8,7 @@
       div.header-home__container.flex.items-center.justify-between
         q-img(src="../../assets/img/ibage-logo.png").header-home__container__logo
         nav.header-home__container__nav.flex
-          a(href="#") Quem Somos
-          a(href="#") Produtos e Serviços
-          a(href="#") Notícias
-          a(href="#") Parceiros
-          a(href="#") Contatos
+          a(v-for="link of links" href="#" @click="scrollElement(link)") {{ link.title }}
         q-btn(
           icon="mdi-menu"
           color="primary"
@@ -26,12 +22,14 @@
 import { QImg } from 'quasar'
 
 import { mapActions, mapGetters } from 'vuex'
+import mixins from '../mixins'
 
 export default {
   name: 'HomeHeader',
   components: {
     QImg
   },
+  mixins: [mixins],
   data () {
     return {
       visibility: false

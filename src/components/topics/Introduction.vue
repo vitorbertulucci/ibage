@@ -17,17 +17,17 @@
         q-btn(color="primary" unelevated no-caps) Lorem Ipsum
       div.introduction__content__right.column.items-end
         nav.introduction__content__right__nav.flex
-          a(href="#") Quem Somos
-          a(href="#") Produtos e Serviços
-          a(href="#") Notícias
-          a(href="#") Parceiros
-          a(href="#") Contato
+          //- a(href="#") Quem Somos
+          //- a(href="#") Produtos e Serviços
+          //- a(href="#") Notícias
+          //- a(href="#") Parceiros
+          //- a(href="#") Contato
+          a(v-for="link of links" href="#" @click="scrollElement(link)") {{ link.title }}
         q-btn(
           icon="menu"
           round
           flat
           size="20px"
-          @click="setViewState(!isShowing)"
         ).introduction__content__right__btn-mobile
 </template>
 
@@ -35,12 +35,14 @@
 import { QImg } from 'quasar'
 
 import { mapActions, mapGetters } from 'vuex'
+import mixins from '../mixins'
 
 export default {
   name: 'Introduction',
   components: {
     QImg
   },
+  mixins: [mixins],
   data () {
     return {
       slide: 1,

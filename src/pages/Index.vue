@@ -3,7 +3,7 @@
     mobile-navbar(v-show="isShowing").animate-popup-down
     introduction
     header-home
-    about-us
+    about-us#about-us
     contact#contact
     footer-home
 </template>
