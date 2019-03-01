@@ -60,6 +60,7 @@ export default {
   height 100vh
   position relative
   overflow hidden
+  color $grey-10
 
   &__bg-left
     width 30%
@@ -98,6 +99,7 @@ export default {
         right 35px
       @media(max-width: 532px)
         top 45px
+        right 20px
 
   &__content
     position absolute
@@ -112,7 +114,7 @@ export default {
       padding 45px 60px
       justify-content center
       @media(max-height: 870px), (max-width: 1480px)
-        padding 45px
+        padding 45px 35px
       @media(max-width: 965px)
         width 100%
         clip-path polygon(60% 0%, 100% 40%, 100% 100%, 0 100%, 0 0)
@@ -133,6 +135,7 @@ export default {
           margin 30px 45px
           max-width 120px
         @media(max-width: 532px)
+          margin 30px
           max-width 100px
 
       h1
