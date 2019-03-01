@@ -4,6 +4,7 @@
     introduction
     header-home
     about-us#about-us
+    products-and-services#products-and-services
     contact#contact
     footer-home
 </template>
@@ -13,6 +14,7 @@ import MobileNavbar from '../components/general/MobileNavbar'
 import HeaderHome from '../components/general/Header'
 import Introduction from '../components/topics/Introduction'
 import AboutUs from '../components/topics/AboutUs'
+import ProductsAndServices from '../components/topics/Products'
 import Contact from '../components/topics/Contact'
 import FooterHome from '../components/general/Footer'
 
@@ -25,6 +27,7 @@ export default {
     HeaderHome,
     Introduction,
     AboutUs,
+    ProductsAndServices,
     Contact,
     FooterHome
   },
