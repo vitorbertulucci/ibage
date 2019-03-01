@@ -8,35 +8,47 @@
       div.header-home__container.flex.items-center.justify-between
         q-img(src="../../assets/img/ibage-logo.png").header-home__container__logo
         nav.header-home__container__nav.flex
-          a(href="#") Quem Somos
-          a(href="#") Produtos e Serviços
-          a(href="#") Notícias
-          a(href="#") Parceiros
-          a(href="#") Contatos
+          a(v-for="link of links" href="#" @click="scrollElement(link)") {{ link.title }}
         q-btn(
           icon="mdi-menu"
           color="primary"
           round
           flat
+          @click="setViewState(!isShowing)"
         ).header-home__container__menu-button
 </template>
 
 <script>
 import { QImg } from 'quasar'
 
+import { mapActions, mapGetters } from 'vuex'
+import mixins from '../mixins'
+
 export default {
   name: 'HomeHeader',
   components: {
     QImg
   },
+  mixins: [mixins],
   data () {
     return {
       visibility: false
     }
   },
+  computed: {
+    ...mapGetters('menuMobile', [ 'isShowing' ])
+  },
   methods: {
+    ...mapActions('menuMobile', [ 'setViewState' ]),
     scrolled (position) {
       this.visibility = position >= 140
+    }
+  },
+  watch: {
+    visibility (newVal) {
+      if (!newVal) {
+        this.setViewState(newVal)
+      }
     }
   }
 }
@@ -63,7 +75,7 @@ export default {
     @media (max-width: 768px)
       padding 30px 25px 30px 30px
     @media (max-width: 414px)
-      padding 15px 10px 15px 15px
+      padding 15px 10px 15px 20px
 
     &__logo
       max-width 78px
