@@ -1,10 +1,10 @@
 <template lang="pug">
   q-page.column
-    mobile-navbar
+    mobile-navbar(v-show="isShowing").animate-popup-down
     introduction
     header-home
     about-us
-    contact
+    contact#contact
     footer-home
 </template>
 
@@ -15,6 +15,8 @@ import Introduction from '../components/topics/Introduction'
 import AboutUs from '../components/topics/AboutUs'
 import Contact from '../components/topics/Contact'
 import FooterHome from '../components/general/Footer'
+
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'PageIndex',
@@ -40,6 +42,9 @@ export default {
     return {
       title: 'IBAGE | Instituto Brasileiro de Ação Municipal e Gestão Pública'
     }
+  },
+  computed: {
+    ...mapGetters('menuMobile', [ 'isShowing' ])
   }
 }
 </script>

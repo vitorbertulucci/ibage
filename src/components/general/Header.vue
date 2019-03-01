@@ -18,11 +18,14 @@
           color="primary"
           round
           flat
+          @click="setViewState(!isShowing)"
         ).header-home__container__menu-button
 </template>
 
 <script>
 import { QImg } from 'quasar'
+
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'HomeHeader',
@@ -34,9 +37,20 @@ export default {
       visibility: false
     }
   },
+  computed: {
+    ...mapGetters('menuMobile', [ 'isShowing' ])
+  },
   methods: {
+    ...mapActions('menuMobile', [ 'setViewState' ]),
     scrolled (position) {
       this.visibility = position >= 140
+    }
+  },
+  watch: {
+    visibility (newVal) {
+      if (!newVal) {
+        this.setViewState(newVal)
+      }
     }
   }
 }

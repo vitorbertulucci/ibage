@@ -22,11 +22,19 @@
           a(href="#") Notícias
           a(href="#") Parceiros
           a(href="#") Contato
-        q-btn(icon="menu" round flat size="20px").introduction__content__right__btn-mobile
+        q-btn(
+          icon="menu"
+          round
+          flat
+          size="20px"
+          @click="setViewState(!isShowing)"
+        ).introduction__content__right__btn-mobile
 </template>
 
 <script>
 import { QImg } from 'quasar'
+
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
   name: 'Introduction',
@@ -47,6 +55,12 @@ export default {
         }
       ]
     }
+  },
+  computed: {
+    ...mapGetters('menuMobile', [ 'isShowing' ])
+  },
+  methods: {
+    ...mapActions('menuMobile', [ 'setViewState' ])
   }
 }
 </script>

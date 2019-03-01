@@ -1,13 +1,26 @@
 <template lang="pug">
   .mobile-navbar
-    .content.column.items-center
-      a(v-for="link of links" :href="link.ref") {{ link.title }}
-    .hide-content
+    .content.column.items-center.shadow-global
+      div(v-for="(link, index) of links" @click="scrollElement(link)").content__link.full-width.text-center.cursor-pointer
+        q-separator
+        a(href="#") {{ link.title }}
 </template>
 
 <script>
+import {
+  scroll,
+  QSeparator
+} from 'quasar'
+
+const { getScrollTarget, setScrollPosition } = scroll
+
+import { mapActions } from 'vuex'
+
 export default {
-  name: 'MobileNabar',
+  name: 'MobileNavbar',
+  components: {
+    QSeparator
+  },
   data () {
     return {
       links: [
@@ -15,8 +28,20 @@ export default {
         { title: 'Produtos e Serviços', ref: '#' },
         { title: 'Notícias', ref: '#' },
         { title: 'Parceiros', ref: '#' },
-        { title: 'Contatos', ref: '#' }
+        { title: 'Contatos', ref: 'contact' }
       ]
+    }
+  },
+  methods: {
+    ...mapActions('menuMobile', [ 'setViewState' ]),
+    scrollElement (link) {
+      let el = document.getElementById(link.ref)
+      let target = getScrollTarget(el)
+      let correctionValue = window.innerWidth <= 640 ? 65 : 90
+      let offset = el.offsetTop - correctionValue
+      let duration = 500
+      setScrollPosition(target, offset, duration)
+      this.setViewState(false)
     }
   }
 }
@@ -27,28 +52,25 @@ export default {
 
 .mobile-navbar
   .content
-    padding 100px 45px 0 45px
-    z-index 999
+    margin-top 90px
+    z-index 100
+    @media (max-width: 414px)
+      margin-top 65px
     background white
-    position absolute
+    position fixed
     top 0
     right 0
     width 100%
-    height 300px
     a
       color $grey-7
       font-size 20px
       text-decoration none
-  .hide-content
-    z-index 998
-    position absolute
-    background black
-    top 0
-    right 0
-    left 0
-    bottom 0
-    opacity 0.7
 </style>
 
 <style lang="stylus" scoped>
+@import '~quasar-variables'
+.content__link
+  line-height 2
+  &:hover
+    background $grey-2
 </style>

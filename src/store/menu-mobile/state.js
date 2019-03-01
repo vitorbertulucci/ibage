@@ -1,3 +1,3 @@
 export default {
-  isShowing: true
+  isShowing: false
 }
