@@ -1,19 +1,14 @@
 <template lang="pug">
   .mobile-navbar
-    .content.column.items-center.shadow-global
+    nav.content.column.items-center.shadow-global
       div(v-for="(link, index) of links" @click="scrollElement(link)").content__link.full-width.text-center.cursor-pointer
         q-separator
         a(href="#") {{ link.title }}
 </template>
 
 <script>
-import {
-  QSeparator
-} from 'quasar'
-
+import { QSeparator } from 'quasar'
 import mixins from '../mixins'
-
-import { mapActions } from 'vuex'
 
 export default {
   name: 'MobileNavbar',
@@ -24,9 +19,6 @@ export default {
   data () {
     return {
     }
-  },
-  methods: {
-    ...mapActions('menuMobile', [ 'setViewState' ])
   }
 }
 </script>

@@ -75,7 +75,7 @@ export default {
     @media (max-width: 768px)
       padding 30px 25px 30px 30px
     @media (max-width: 414px)
-      padding 15px 10px 15px 15px
+      padding 15px 10px 15px 20px
 
     &__logo
       max-width 78px

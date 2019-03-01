@@ -3,7 +3,7 @@
     div.introduction__bg-left
     div.introduction__bg-right
       q-img(src="../../assets/img/plants.jpeg")
-      q-btn(icon="menu" round flat).btn-menu
+      q-btn(icon="menu" round flat @click="changeMenuVisibility").btn-menu
     div.introduction__content.flex
       div.introduction__content__left.column.items-start.shadow-global
         img(src="../../assets/img/ibage-logo.png").logo
@@ -17,17 +17,13 @@
         q-btn(color="primary" unelevated no-caps) Lorem Ipsum
       div.introduction__content__right.column.items-end
         nav.introduction__content__right__nav.flex
-          //- a(href="#") Quem Somos
-          //- a(href="#") Produtos e Serviços
-          //- a(href="#") Notícias
-          //- a(href="#") Parceiros
-          //- a(href="#") Contato
           a(v-for="link of links" href="#" @click="scrollElement(link)") {{ link.title }}
         q-btn(
           icon="menu"
           round
           flat
           size="20px"
+          @click="changeMenuVisibility"
         ).introduction__content__right__btn-mobile
 </template>
 
@@ -55,14 +51,18 @@ export default {
           key: 2,
           src: '../../assets/img/growing-plant.jpg'
         }
-      ]
+      ],
+      visibility: false
     }
   },
   computed: {
     ...mapGetters('menuMobile', [ 'isShowing' ])
   },
   methods: {
-    ...mapActions('menuMobile', [ 'setViewState' ])
+    ...mapActions('menuMobile', [ 'setViewState' ]),
+    changeMenuVisibility () {
+      this.setViewState(!this.isShowing)
+    }
   }
 }
 </script>
