@@ -1,10 +1,11 @@
 <template lang="pug">
-  q-page.column
+  q-page.index.column
     mobile-navbar(v-show="isShowing").animate-popup-down
     introduction
     header-home
     about-us#about-us
     products-and-services#products-and-services
+    partners#partners
     contact#contact
     footer-home
 </template>
@@ -15,6 +16,7 @@ import HeaderHome from '../components/general/Header'
 import Introduction from '../components/topics/Introduction'
 import AboutUs from '../components/topics/AboutUs'
 import ProductsAndServices from '../components/topics/Products'
+import Partners from '../components/topics/Partners'
 import Contact from '../components/topics/Contact'
 import FooterHome from '../components/general/Footer'
 
@@ -28,6 +30,7 @@ export default {
     Introduction,
     AboutUs,
     ProductsAndServices,
+    Partners,
     Contact,
     FooterHome
   },
@@ -56,4 +59,7 @@ export default {
 @import '~quasar-variables'
 *
   font-family 'Trebuchet MS'
+
+.index
+  overflow-x hidden
 </style>

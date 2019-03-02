@@ -56,34 +56,6 @@ export default {
     @media (max-width: 768px)
       padding 0 30px 45px 30px
 
-.title
-  text-align center
-  margin-bottom 20px
-  @media (max-width: 540px)
-    font-size 40px
-
-.underline
-  @media (max-width: 540px)
-    display flex
-    justify-content center
-  *
-    height 6px
-    width 28px
-    @media (max-width: 540px)
-      height 6px
-      width 28px
-
-  .one
-    background $primary
-  .two
-    background $secondary
-  .three
-    background $tertiary
-  .four
-    background $quaternary
-  .five
-    background #01442c
-
 .products__content
   display grid
   grid-template-columns auto 33% auto

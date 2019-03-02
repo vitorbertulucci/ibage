@@ -135,33 +135,6 @@ export default {
   max-width 200px
   @media (max-width: 890px)
     margin 0 auto 20px auto
-
-.title
-  margin-bottom 20px
-  @media (max-width: 540px)
-    font-size 40px
-
-.underline
-  @media (max-width: 540px)
-    display flex
-    justify-content center
-  *
-    height 6px
-    width 28px
-    @media (max-width: 540px)
-      height 6px
-      width 28px
-
-  .one
-    background $primary
-  .two
-    background $secondary
-  .three
-    background $tertiary
-  .four
-    background $quaternary
-  .five
-    background #01442c
 </style>
 
 <style lang="stylus">

@@ -8,7 +8,7 @@ export default {
         { title: 'Quem Somos', ref: 'about-us' },
         { title: 'Produtos e Serviços', ref: 'products-and-services' },
         { title: 'Notícias', ref: '#' },
-        { title: 'Parceiros', ref: '#' },
+        { title: 'Parceiros', ref: 'partners' },
         { title: 'Contato', ref: 'contact' }
       ]
     }
