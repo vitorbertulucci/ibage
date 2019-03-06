@@ -61,6 +61,7 @@ export default {
 @import '~quasar-variables'
 
 .partners
+  background $grey-3
   &__container
     max-width 1110px
     padding 0px 0 55px 0
