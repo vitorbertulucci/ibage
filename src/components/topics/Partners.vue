@@ -22,10 +22,6 @@
           .slide
         slide.flex.justify-center
           .slide
-        slide.flex.justify-center
-          .slide
-        slide.flex.justify-center
-          .slide
 </template>
 
 <script>
@@ -46,8 +42,7 @@ export default {
 .partners__content
   .VueCarousel-wrapper
     .VueCarousel-inner
-      @media (min-width: 1300px)
-        justify-content space-between
+      justify-content center !important
 .material-icons
   font-size 32px
   color $grey-9

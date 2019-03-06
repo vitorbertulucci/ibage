@@ -23,6 +23,7 @@ import { QImg } from 'quasar'
 
 import { mapActions, mapGetters } from 'vuex'
 import mixins from '../mixins'
+import debounce from 'lodash/debounce'
 
 export default {
   name: 'HomeHeader',
@@ -40,8 +41,11 @@ export default {
   },
   methods: {
     ...mapActions('menuMobile', [ 'setViewState' ]),
+    debouncedScroll: debounce((_this, position) => {
+      _this.visibility = position >= 140
+    }, 50),
     scrolled (position) {
-      this.visibility = position >= 140
+      this.debouncedScroll(this, position)
     }
   },
   watch: {
