@@ -21,22 +21,23 @@
             p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.
           .about-us__texts__content__section__right.flex.justify-center
             .img-section
-              img(src="../../assets/img/edify1.png")
+              img(src="../../assets/img/new.png")
         .about-us__texts__content__section--inverted.flex.justify-center.items-center
           .about-us__texts__content__section__left.column
             h4 Missão
             p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.
+            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.
           .about-us__texts__content__section__right--inverted.flex.justify-center
             .img-section
-              img(src="../../assets/img/tree7.png")
+              img(src="../../assets/img/new2.png")
         .about-us__texts__content__section.flex.justify-center.items-center
           .about-us__texts__content__section__left.column
             h4 Objetivos
             p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.
             p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.
           .about-us__texts__content__section__right.flex.justify-center
-            .img-section.last-edify
-              img(src="../../assets/img/edify.png")
+            .img-section
+              img(src="../../assets/img/new3.png")
 </template>
 
 <script>
@@ -183,8 +184,6 @@ export default {
 
         .img-section
           width 350px
-          &.last-edify
-            width 230px
 
           img
             width 100%
