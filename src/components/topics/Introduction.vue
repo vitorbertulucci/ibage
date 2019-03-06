@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.introduction.flex
+  section.introduction.flex
     div.introduction__bg-left
     div.introduction__bg-right
       q-img(src="../../assets/img/plants.jpeg")
@@ -161,13 +161,15 @@ export default {
         margin 0 0 45px 35px
         @media(max-height: 870px), (max-width: 1480px)
           line-height 72px
-          margin 15% 0 30px 0
+          margin 15% 0 30px 25px
         @media (max-width: 1215px)
           font-size 66px
           line-height 72px
         @media (max-width: 1100px)
           font-size 54px
           line-height 60px
+        @media(max-width: 965px)
+          margin-left 0
         @media(max-width: 520px)
           font-size 42px
           line-height 48px
@@ -182,11 +184,12 @@ export default {
         font-size 20px
         margin 0 0 45px 35px
         @media(max-height: 870px), (max-width: 1480px)
-          margin 0 0 30px 0
+          margin 0 0 30px 25px
           font-size 18px
           max-width 65%
         @media(max-width: 965px)
           max-width 100%
+          margin-left 0
         @media(max-width: 520px)
           font-size 16px
           line-height 22px
@@ -197,6 +200,8 @@ export default {
         border-radius 0
         font-size 20px
         @media(max-height: 870px), (max-width: 1480px)
+          margin-left 25px
+        @media(max-width: 965px)
           margin-left 0
         @media(max-width: 520px)
           font-size 16px

@@ -77,7 +77,7 @@ export default {
         padding 45px 30px 45px 30px
 
       img
-        max-width 110px
+        max-width 90px
         margin 0 0 20px 0
 
       h5
@@ -184,6 +184,10 @@ export default {
 
         .img-section
           width 350px
+          @media (max-width: 430px)
+            width 280px
+          @media (max-width: 360px)
+            width 240px
 
           img
             width 100%

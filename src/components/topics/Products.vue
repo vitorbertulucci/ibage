@@ -1,5 +1,5 @@
 <template lang="pug">
-  .products.column.items-center
+  section.products.column.items-center
     .products__container.full-width
       .products__title.self-center
         h3.title Produtos e Serviços
@@ -47,6 +47,9 @@ export default {
   background $grey-3
   color $grey-10
 
+  &__title
+    margin-bottom 45px
+
   .title
     margin 0
     margin-bottom 20px
@@ -59,32 +62,35 @@ export default {
     @media (max-width: 768px)
       padding 45px 30px 45px 30px
 
-  &__content
-    max-width 1110px
-    padding 55px 0
-    @media (max-width: 1300px)
-      padding 55px 45px
-    @media (max-width: 768px)
-      padding 55px 30px 45px 30px
-    @media(max-width: 750px)
-      padding 0 30px 45px 30px
+  // &__content
+  //   max-width 1110px
+  //   padding 55px 0
+  //   @media (max-width: 1300px)
+  //     padding 55px 45px
+  //   @media (max-width: 768px)
+  //     padding 55px 30px 45px 30px
+  //   @media(max-width: 750px)
+  //     padding 0 30px 45px 30px
 
 .products__content
   display grid
   grid-template-columns 48% 48%
-  grid-gap 4%
+  grid-column-gap 4%
+  grid-row-gap 60px
   @media(max-width: 750px)
     display flex
     flex-direction column
     align-items center
-    .content__items
-      margin-top 45px
-      max-width none
 
 .content__items
   position relative
   max-width 450px
   margin 0 auto
+  @media(max-width: 750px)
+    max-width none
+    margin-top 60px
+    &:first-of-type
+      margin-top 45px
 
 .item-2
 .item-3
@@ -107,7 +113,7 @@ export default {
   border-radius 150px
 
 .item__title
-  margin 16px 0
+  margin 25px 0
   text-align left
 
 .item__description
@@ -115,7 +121,7 @@ export default {
   margin 0
 
 .products__actions
-  padding-top 16px
+  padding-top 25px
   .btn
     padding 10px 30px
     border-radius 0

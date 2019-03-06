@@ -1,5 +1,5 @@
 <template lang="pug">
-  .partners.column.items-center
+  section.partners.column.items-center
     .partners__container.full-width
       .partners__title.self-center
         h3.title Parceiros

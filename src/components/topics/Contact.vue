@@ -1,5 +1,5 @@
 <template lang="pug">
-  div.contact.column.items-center
+  section.contact.column.items-center
     .contact__container
       .contact__title.flex.justify-center
         h3.title Contato

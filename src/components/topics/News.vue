@@ -1,5 +1,5 @@
 <template lang="pug">
-  .news.column.items-center
+  section.news.column.items-center
     .news__container.full-width
       .news__title.self-center
         h3.title Notícias
@@ -18,7 +18,7 @@
             q-btn(
               color="primary"
               no-caps
-            ).btn.no-shadow — Leia mais
+            ).btn.no-shadow Leia mais
             label.text-h5 05/03/2019
         .content__past-news.column.justify-between
           div(v-for="(item, index) of news").past-news__item.row.no-wrap
@@ -31,7 +31,7 @@
                 q-btn(
                   color="primary"
                   no-caps
-                ).no-border.no-border-radius.no-shadow — Leia mais
+                ).no-border.no-border-radius.no-shadow Leia mais
             div(:class="`colorful-border-${index}`")
 </template>
 
@@ -69,32 +69,62 @@ export default {
 @import '~quasar-variables'
 
 .news
+  color $grey-10
+  &__title
+    margin-bottom 45px
+
+  .title
+    margin 0 0 20px 0
+
   &__container
     max-width 1110px
-    padding 0px 0 55px 0
+    padding 60px 0
     @media (max-width: 1300px)
-      padding 45px 45px 0px 45px
+      padding 60px 45px
     @media (max-width: 768px)
-      padding 45px 50px 0px 50px
+      padding 45px 30px
 
   &__content
-    max-width 1110px
-    padding 45px 0 55px 0
-    @media (max-width: 1300px)
-      padding 45px 45px 55px 45px
-    @media (max-width: 768px)
-      padding 45px 10px 45px 10px
+    display grid
+    grid-gap 4%
+    grid-template-columns 48% 48%
+    // max-width 1110px
+    // padding 45px 0 55px 0
+    // @media (max-width: 1300px)
+    //   padding 45px 45px 55px 45px
+    // @media (max-width: 768px)
+    //   padding 45px 10px 45px 10px
     @media (max-width: 1100px)
       display flex
       flex-direction column
       align-items center
-    display grid
-    grid-gap 2%
-    grid-template-columns 49% 49%
+
+.content__primary-news
+  @media (max-width: 1100px)
+    margin-bottom 45px
+
+  h4
+    margin 20px 0 10px 0
+
+  p
+    margin-bottom 30px
+    @media (max-width: 610px)
+      margin-bottom 20px
+
+.primary-news__action
+  @media (max-width: 1100px)
+    flex-direction row-reverse
+
+  .q-btn
+    padding 10px 30px
+    border-radius 0
+    font-size 20px
+    @media(max-width: 520px)
+      font-size 16px
 
 .past-news__item
   @media (max-width: 1100px)
-    padding-top 16px
+    padding-top 25px
   @media (max-width: 610px)
     .past-news__content
       flex-wrap wrap !important
@@ -111,12 +141,17 @@ export default {
   padding 0 16px
 
 .colorful-border-0
-  width 20px
+  width 15px
   background $secondary
+
 .colorful-border-1
-  width 20px
+  width 15px
   background $tertiary
+
 .colorful-border-2
-  width 20px
+  width 15px
   background $quaternary
+
+.text-h5
+  font-size 18px
 </style>
