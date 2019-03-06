@@ -62,21 +62,26 @@ export default {
 
 .partners
   background $grey-3
+
+  .title
+    margin 0 0 20px 0
+    color $grey-10
+
   &__container
     max-width 1110px
-    padding 0px 0 55px 0
+    padding 60px 0
     @media (max-width: 1300px)
-      padding 45px 45px 0px 45px
+      padding 60px 45px
     @media (max-width: 768px)
-      padding 45px 50px 0px 50px
+      padding 45px 50px
 
   &__content
     max-width 1110px
-    padding 45px 0 55px 0
+    padding 45px 0 0 0
     @media (max-width: 1300px)
-      padding 45px 45px 55px 45px
+      padding 45px 45px 0 45px
     @media (max-width: 768px)
-      padding 45px 10px 45px 10px
+      padding 45px 10px 0 10px
 
 .slide
   width 150px

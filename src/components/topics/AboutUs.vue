@@ -2,7 +2,7 @@
   section.about-us.column
     .about-us__presentation.column.column.items-center
       .about-us__presentation__content.column.items-center
-        h2 Ibage
+        img(src="../../assets/img/ibage-nome-branco.png")
         h5 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type lorem ipsum took a galley.
     .about-us__texts.column.items-center
       .about-us__texts__content.column.items-center
@@ -18,20 +18,25 @@
           .about-us__texts__content__section__left.column
             h4 Lorem ipsum lore
             p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.
+            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.
           .about-us__texts__content__section__right.flex.justify-center
-            .box
+            .img-section
+              img(src="../../assets/img/edify1.png")
         .about-us__texts__content__section--inverted.flex.justify-center.items-center
           .about-us__texts__content__section__left.column
             h4 Lorem ipsum lore
             p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.
           .about-us__texts__content__section__right--inverted.flex.justify-center
-            .box
+            .img-section
+              img(src="../../assets/img/tree7.png")
         .about-us__texts__content__section.flex.justify-center.items-center
           .about-us__texts__content__section__left.column
             h4 Lorem ipsum lore
             p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.
+            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.
           .about-us__texts__content__section__right.flex.justify-center
-            .box
+            .img-section.last-edify
+              img(src="../../assets/img/edify.png")
 </template>
 
 <script>
@@ -59,7 +64,7 @@ export default {
       width 70px
       height 35px
       bottom 0
-      margin-bottom -35px
+      margin-bottom -34px
       clip-path polygon(100% 0, 0 0, 50% 100%)
 
     &__content
@@ -70,9 +75,8 @@ export default {
       @media (max-width: 768px)
         padding 45px 30px 45px 30px
 
-      h2
-        font-size 44px
-        line-height 48px
+      img
+        max-width 110px
         margin 0 0 20px 0
 
       h5
@@ -159,8 +163,11 @@ export default {
           p
             text-align justify
             margin 0
+            color $grey-10
+            margin-bottom 10px
             @media(max-width: 750px)
-              margin-bottom 30px
+              &:last-of-type
+                margin-bottom 30px
 
         &__right
           flex 1
@@ -174,14 +181,18 @@ export default {
           @media(max-width: 750px)
             margin-right 0
 
-        .box
-          width 240px
-          height 240px
-          border-radius 240px
-          background $grey-4
+        .img-section
+          width 350px
+          &.last-edify
+            width 230px
+
+          img
+            width 100%
+            height auto
 
       &__section--inverted
         flex-direction row-reverse
         @media(max-width: 750px)
           flex-direction column
+
 </style>
