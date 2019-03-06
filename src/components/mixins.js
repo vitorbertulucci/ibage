@@ -7,7 +7,7 @@ export default {
       links: [
         { title: 'Quem Somos', ref: 'about-us' },
         { title: 'Produtos e Serviços', ref: 'products-and-services' },
-        { title: 'Notícias', ref: '#' },
+        { title: 'Notícias', ref: 'news' },
         { title: 'Parceiros', ref: 'partners' },
         { title: 'Contato', ref: 'contact' }
       ]

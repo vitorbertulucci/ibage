@@ -5,6 +5,7 @@
     header-home
     about-us#about-us
     products-and-services#products-and-services
+    news#news
     partners#partners
     contact#contact
     footer-home
@@ -16,6 +17,7 @@ import HeaderHome from '../components/general/Header'
 import Introduction from '../components/topics/Introduction'
 import AboutUs from '../components/topics/AboutUs'
 import ProductsAndServices from '../components/topics/Products'
+import News from '../components/topics/News'
 import Partners from '../components/topics/Partners'
 import Contact from '../components/topics/Contact'
 import FooterHome from '../components/general/Footer'
@@ -30,6 +32,7 @@ export default {
     Introduction,
     AboutUs,
     ProductsAndServices,
+    News,
     Partners,
     Contact,
     FooterHome
