@@ -129,6 +129,9 @@ export default {
 .email-form__btn
   .q-btn
     padding 10px 30px
+    font-size 20px
+    @media (max-width: 540px)
+      font-size 16px !important
 
 .social-media__logo
   margin 0 auto

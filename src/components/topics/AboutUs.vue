@@ -19,19 +19,22 @@
             h4 Lorem ipsum lore
             p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.
           .about-us__texts__content__section__right.flex.justify-center
-            .box
+            .img-section
+              img(src="../../assets/img/ibage-logo.png")
         .about-us__texts__content__section--inverted.flex.justify-center.items-center
           .about-us__texts__content__section__left.column
             h4 Lorem ipsum lore
             p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.
           .about-us__texts__content__section__right--inverted.flex.justify-center
-            .box
+            .img-section
+              img(src="../../assets/img/ibage-logo.png")
         .about-us__texts__content__section.flex.justify-center.items-center
           .about-us__texts__content__section__left.column
             h4 Lorem ipsum lore
             p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.
           .about-us__texts__content__section__right.flex.justify-center
-            .box
+            .img-section
+              img(src="../../assets/img/ibage-logo.png")
 </template>
 
 <script>
@@ -159,6 +162,7 @@ export default {
           p
             text-align justify
             margin 0
+            color $grey-10
             @media(max-width: 750px)
               margin-bottom 30px
 
@@ -174,14 +178,16 @@ export default {
           @media(max-width: 750px)
             margin-right 0
 
-        .box
-          width 240px
-          height 240px
-          border-radius 240px
-          background $grey-4
+        .img-section
+          width 300px
+
+          img
+            width 100%
+            height auto
 
       &__section--inverted
         flex-direction row-reverse
         @media(max-width: 750px)
           flex-direction column
+
 </style>

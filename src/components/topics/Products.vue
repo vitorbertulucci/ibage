@@ -10,8 +10,9 @@
           .four
           .five
       .products__content
-        div(v-for="(item, index) of items").content__items.column.items-center.self-center
-          div(:class="`logo-${index}`").item__logo
+        div(v-for="(item, index) of items").content__items.column.items-center
+          div(:class="`logo-${index}`").item__logo.flex.items-center.justify-center
+            q-icon(name="mdi-account" size="80px" color="white")
           h4.item__title {{ item.title }}
           p.item__description {{ item.description }}
       .products__actions.flex.items-center.justify-center
@@ -19,9 +20,12 @@
 </template>
 
 <script>
-
+import { QIcon } from 'quasar'
 export default {
   name: 'ProductsAndServices',
+  components: {
+    QIcon
+  },
   data () {
     return {
       items: [
@@ -36,24 +40,32 @@ export default {
 
 <style lang="stylus" scoped>
 @import '~quasar-variables'
+
 .products
   text-align justify
   background $grey-3
+  color $grey-10
+
+  .title
+    margin 0
+    margin-bottom 20px
 
   &__container
     max-width 1110px
-    padding 0px 0 55px 0
+    padding 60px 0
     @media (max-width: 1300px)
-      padding 45px 45px 55px 45px
+      padding 60px 45px
     @media (max-width: 768px)
       padding 45px 30px 45px 30px
 
   &__content
     max-width 1110px
-    padding 45px 0 55px 0
+    padding 55px 0
     @media (max-width: 1300px)
-      padding 45px 45px 55px 45px
+      padding 55px 45px
     @media (max-width: 768px)
+      padding 55px 30px 45px 30px
+    @media(max-width: 750px)
       padding 0 30px 45px 30px
 
 .products__content
@@ -75,8 +87,10 @@ export default {
 
 .logo-0
   background $primary
+
 .logo-1
   background $quaternary
+
 .logo-2
   background $tertiary
 
@@ -87,14 +101,18 @@ export default {
 
 .item__title
   margin 16px 0
-  // font-size 16px
+  text-align left
+
 .item__description
   flex 1
+  margin 0
 
 .products__actions
+
   .btn
+    padding 10px 30px
     border-radius 0
-    font-size 24px
+    font-size 20px
     @media (max-width: 540px)
-      font-size 22px
+      font-size 16px
 </style>
