@@ -42,7 +42,9 @@ export default {
 .partners__content
   .VueCarousel-wrapper
     .VueCarousel-inner
-      justify-content center !important
+      @media (max-width: 768px)
+        justify-content start
+      justify-content space-around
 .material-icons
   font-size 32px
   color $grey-9
@@ -56,6 +58,7 @@ export default {
 @import '~quasar-variables'
 
 .partners
+  width 100%
   background $grey-3
 
   .title

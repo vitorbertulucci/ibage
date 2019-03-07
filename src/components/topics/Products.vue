@@ -16,7 +16,7 @@
           h4.item__title {{ item.title }}
           p.item__description {{ item.description }}
           .products__actions.flex.items-center.justify-center
-            q-btn(color="primary" unelevated no-caps).no-border.no-shadow.no-border-radius Lorem Ipsum
+            q-btn(color="primary" unelevated no-caps @click="redirectToPage(item.router)").no-border.no-shadow.no-border-radius Saiba mais
 </template>
 
 <script>
@@ -29,11 +29,16 @@ export default {
   data () {
     return {
       items: [
-        { title: 'Consultoria', icon: 'mdi-finance', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.' },
-        { title: 'Tecnologia e Inovação', icon: 'memory', description: 'Trata-se de um sistema de informação gerencial integrado que subsidia a gestão no processo de tomada de decisão, caracterizado como um sistema complexo, com seus elementos de interação, organização e estrutura.' },
-        { title: 'Projetos sociais', icon: 'mdi-account-group-outline', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.' },
-        { title: 'Treinamento e capacitação', icon: 'mdi-bullseye-arrow', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.' }
+        { title: 'Consultoria', router: '#', icon: 'mdi-finance', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.' },
+        { title: 'Tecnologia e Inovação', router: '#', icon: 'memory', description: 'Trata-se de um sistema de informação gerencial integrado que subsidia a gestão no processo de tomada de decisão, caracterizado como um sistema complexo, com seus elementos de interação, organização e estrutura.' },
+        { title: 'Projetos sociais', router: '#', icon: 'mdi-account-group-outline', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.' },
+        { title: 'Treinamento e capacitação', router: '#', icon: 'mdi-bullseye-arrow', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.' }
       ]
+    }
+  },
+  methods: {
+    redirectToPage (router) {
+      this.$router.push(router)
     }
   }
 }

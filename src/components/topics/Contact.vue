@@ -73,9 +73,8 @@ export default {
 
 .contact
   color white
-  flex 1
   background $quinary
-
+  width 100%
   &__container
     max-width 1110px
     @media (max-width: 1300px)
@@ -84,7 +83,6 @@ export default {
       padding 0 30px
 
   &__content
-    flex 1
     display grid
     margin 0 auto 50px auto
     grid-column-gap 16px

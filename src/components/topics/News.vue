@@ -2,7 +2,7 @@
   section.news.column.items-center
     .news__container.full-width
       .news__title.self-center
-        h3.title Notícias
+        h3.title Publicações
         .underline.full-width.row.justify-center
           .one
           .two

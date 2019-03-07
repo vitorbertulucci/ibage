@@ -6,10 +6,11 @@
   )
     header(v-show="visibility" v-scroll="scrolled").header-home.flex.items-center.justify-center.shadow-global.animate-pop
       div.header-home__container.flex.items-center.justify-between
-        q-img(src="../../assets/img/ibage-logo.png").header-home__container__logo
+        q-img(:src="require('../../assets/img/ibage-logo.png')").header-home__container__logo
         nav.header-home__container__nav.flex
           a(v-for="link of links" href="#" @click="scrollElement(link)") {{ link.title }}
         q-btn(
+          v-if="this.visibility"
           icon="mdi-menu"
           color="primary"
           round
@@ -77,7 +78,7 @@ export default {
     @media (max-width: 1300px)
       padding 45px
     @media (max-width: 768px)
-      padding 30px 25px 30px 30px
+      padding 15px 25px 15px 30px
     @media (max-width: 414px)
       padding 15px 10px 15px 20px
 

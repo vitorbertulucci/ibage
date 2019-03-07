@@ -2,11 +2,11 @@
   section.introduction.flex
     div.introduction__bg-left
     div.introduction__bg-right
-      q-img(src="../../assets/img/plants.jpeg")
-      q-btn(icon="menu" round flat @click="changeMenuVisibility").btn-menu
+      q-img(:src="require('../../assets/img/plants.jpeg')")
+      //- q-btn(icon="menu" round flat @click="changeMenuVisibility").btn-menu
     div.introduction__content.flex
       div.introduction__content__left.column.items-start.shadow-global
-        img(src="../../assets/img/ibage-logo.png").logo
+        img(:src="require('../../assets/img/ibage-logo.png')").logo
         h1
           | Fuel creativity.
           br
@@ -18,13 +18,13 @@
       div.introduction__content__right.column.items-end
         nav.introduction__content__right__nav.flex
           a(v-for="link of links" href="#" @click="scrollElement(link)") {{ link.title }}
-        q-btn(
-          icon="menu"
-          round
-          flat
-          size="20px"
-          @click="changeMenuVisibility"
-        ).introduction__content__right__btn-mobile
+        //- q-btn(
+        //-   icon="menu"
+        //-   round
+        //-   flat
+        //-   size="20px"
+        //-   @click="changeMenuVisibility"
+        //- ).introduction__content__right__btn-mobile
 </template>
 
 <script>
@@ -246,7 +246,7 @@ export default {
           color white
           text-decoration none
           transition all .2s ease
-          text-transform uppercase
+          // text-transform uppercase
 
           &:first-of-type
             margin 0

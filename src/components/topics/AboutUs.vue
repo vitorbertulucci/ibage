@@ -50,7 +50,7 @@ export default {
 @import '~quasar-variables'
 
 .about-us
-
+  width 100%
   &__presentation
     background $primary
     color white
