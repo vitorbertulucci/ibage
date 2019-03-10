@@ -3,7 +3,7 @@
     .about-us__presentation.column.column.items-center
       .about-us__presentation__content.column.items-center
         img(src="../../assets/img/ibage-nome-branco.png")
-        h5 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type lorem ipsum took a galley.
+        h5 O Instituto Brasileiro de Ação Municipal e Gestão Pública é uma Instituição que prima pela gestão de excelência e de qualidade de modo a contribuir para um desenvolvimento sustentável para o Brasil, de forma que o atendimento às demandas locais, principalmente em áreas menos favorecidas, gere um ganho estrutural e uma mudança na forma de governar.
     .about-us__texts.column.items-center
       .about-us__texts__content.column.items-center
         .about-us__texts__content__title.flex.justify-center
@@ -83,7 +83,7 @@ export default {
       h5
         font-size 18px
         line-height 24px
-        max-width 50%
+        max-width 70%
         margin 0
         @media(max-width: 965px)
           max-width 80%

@@ -30,7 +30,7 @@
             outlined
             standout
             bg-color="white"
-          ).email-form__input.no-shadow
+          ).email-form__input.no-shadow.no-border-radius
           .email-form__btn.flex.self-end
             q-btn(
               size="lg"

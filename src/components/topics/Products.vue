@@ -10,11 +10,11 @@
           .four
           .five
       .products__content
-        div(v-for="(item, index) of items" :class="`item-${index}`").content__items.column.items-center
+        div(v-for="(item, index) of items" :class="`item-${index}`").content__items.column.items-center.q-card.shadow-global.no-border-radius
           div(:class="`logo-${index}`").item__logo.flex.items-center.justify-center
             q-icon(:name="item.icon" size="80px" color="white")
           h4.item__title {{ item.title }}
-          p.item__description {{ item.description }}
+          p(v-for="desc of item.description").item__description {{ desc }}
           .products__actions.flex.items-center.justify-center
             q-btn(color="primary" unelevated no-caps @click="redirectToPage(item.router)").no-border.no-shadow.no-border-radius Saiba mais
 </template>
@@ -29,10 +29,10 @@ export default {
   data () {
     return {
       items: [
-        { title: 'Consultoria', router: '#', icon: 'mdi-finance', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.' },
-        { title: 'Tecnologia e Inovação', router: '#', icon: 'memory', description: 'Trata-se de um sistema de informação gerencial integrado que subsidia a gestão no processo de tomada de decisão, caracterizado como um sistema complexo, com seus elementos de interação, organização e estrutura.' },
-        { title: 'Projetos sociais', router: '#', icon: 'mdi-account-group-outline', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.' },
-        { title: 'Treinamento e capacitação', router: '#', icon: 'mdi-bullseye-arrow', description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.' }
+        { title: 'Consultoria', router: '#', icon: 'mdi-finance', description: ['O Instituto IBAGE oferece consultoria, assessoria e auditoria às administrações públicas municipais para dirimir problemas de gestão e garantir serviços de qualidade aos cidadãos.', 'Acreditamos que por meio da melhoria da gestão pública do Brasil teremos um serviço de excelência e respeito aos interesses públicos.', 'O IBAGE atua também na gestão de projetos e de convênios, assegurando o acompanhamento administrativo, financeiro, técnico e jurídico, sempre de acordo com a ética e a legislação vigente.'] },
+        { title: 'Tecnologia e Inovação', router: '#', icon: 'memory', description: ['Com o uso de soluções digitais e inovações tecnológicas é possível a administração pública prestar um serviço de melhor qualidade, com presteza e rendimento funcional. Assim, reduzir custos à máquina administrativa e alocar corretamente os recursos existentes.'] },
+        { title: 'Projetos sociais', router: '#', icon: 'mdi-account-group-outline', description: ['Compreendemos que o nosso desafio é também na área social, de forma a promover um desenvolvimento sustentável para toda a população local. Desse modo, temos trabalhado em diversas frentes para trazer benefícios reais à sociedade.'] },
+        { title: 'Treinamento e capacitação', router: '/treinamentos-e-capacitacao', icon: 'mdi-bullseye-arrow', description: ['O IBAGE realiza a capacitação e o treinamento de mão de obra especializada por meio de cursos presenciais, em Brasília ou in loco, contribuindo para a formação de um capital humano especializado.'] }
       ]
     }
   },
@@ -91,6 +91,7 @@ export default {
   position relative
   max-width 450px
   margin 0 auto
+  padding 40px
   @media(max-width: 750px)
     max-width none
     margin-top 60px
@@ -115,11 +116,11 @@ export default {
 .item__logo
   width 150px
   height 150px
-  border-radius 150px
+  border-radius 150px !important
 
 .item__title
   margin 25px 0
-  text-align left
+  text-align center
 
 .item__description
   flex 1
