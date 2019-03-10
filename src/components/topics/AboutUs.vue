@@ -83,7 +83,7 @@ export default {
       h5
         font-size 18px
         line-height 24px
-        max-width 50%
+        max-width 70%
         margin 0
         @media(max-width: 965px)
           max-width 80%

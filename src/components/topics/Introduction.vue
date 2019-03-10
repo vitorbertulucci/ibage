@@ -159,7 +159,7 @@ export default {
         margin 0 0 45px 35px
         @media(max-height: 870px), (max-width: 1480px)
           line-height 72px
-          margin 15% 0 30px 25px
+          margin 9% 0 30px 25px
         @media (max-width: 1215px)
           font-size 66px
           line-height 72px
@@ -184,7 +184,7 @@ export default {
         @media(max-height: 870px), (max-width: 1480px)
           margin 0 0 30px 25px
           font-size 18px
-          max-width 65%
+          max-width 54%
         @media(max-width: 965px)
           max-width 100%
           margin-left 0
@@ -228,7 +228,7 @@ export default {
 
       &__nav
         font-size 15px
-        width 562px
+        width 545px
         z-index 10
         position absolute
         top 0
