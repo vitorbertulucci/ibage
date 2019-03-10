@@ -2,19 +2,17 @@
   section.introduction.flex
     div.introduction__bg-left
     div.introduction__bg-right
-      q-img(:src="require('../../assets/img/plants.jpeg')")
+      q-img(:src="require('../../assets/img/61.jpg')")
       //- q-btn(icon="menu" round flat @click="changeMenuVisibility").btn-menu
     div.introduction__content.flex
       div.introduction__content__left.column.items-start.shadow-global
         img(:src="require('../../assets/img/ibage-logo.png')").logo
         h1
-          | Fuel creativity.
+          | Gestão por
           br
-          | Find community.
-          br
-          | See the world.
-        p Design Exchange is a once-in-a-lifetime opportunity for senior designers from the world’s leading companies to experience a new city through the lens of design.
-        q-btn(color="primary" unelevated no-caps) Lorem Ipsum
+          | Excelência.
+        p Conheça um pouco mais do Instituto Brasileiro de Ação Municipal de Gestão Pública, sua missão e o que ele têm a oferecer.
+        q-btn(color="primary" unelevated no-caps @click="scrollElement('about-us')") Conheça
       div.introduction__content__right.column.items-end
         nav.introduction__content__right__nav.flex
           a(v-for="link of links" href="#" @click="scrollElement(link)") {{ link.title }}
