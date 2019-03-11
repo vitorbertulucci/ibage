@@ -15,7 +15,7 @@
             q-icon(:name="item.icon" size="80px" color="white")
           h4.item__title {{ item.title }}
           p(v-for="desc of item.description").item__description {{ desc }}
-          .products__actions.flex.items-center.justify-center
+          .products__actions.flex.items-center.justifyenter
             q-btn(color="primary" unelevated no-caps @click="redirectToPage(item.router)").no-border.no-shadow.no-border-radius Saiba mais
 </template>
 
@@ -29,10 +29,10 @@ export default {
   data () {
     return {
       items: [
-        { title: 'Consultoria', router: '#', icon: 'mdi-finance', description: ['O Instituto IBAGE oferece consultoria, assessoria e auditoria às administrações públicas municipais para dirimir problemas de gestão e garantir serviços de qualidade aos cidadãos.', 'Acreditamos que por meio da melhoria da gestão pública do Brasil teremos um serviço de excelência e respeito aos interesses públicos.', 'O IBAGE atua também na gestão de projetos e de convênios, assegurando o acompanhamento administrativo, financeiro, técnico e jurídico, sempre de acordo com a ética e a legislação vigente.'] },
-        { title: 'Tecnologia e Inovação', router: '#', icon: 'memory', description: ['Com o uso de soluções digitais e inovações tecnológicas é possível a administração pública prestar um serviço de melhor qualidade, com presteza e rendimento funcional. Assim, reduzir custos à máquina administrativa e alocar corretamente os recursos existentes.'] },
-        { title: 'Projetos sociais', router: '#', icon: 'mdi-account-group-outline', description: ['Compreendemos que o nosso desafio é também na área social, de forma a promover um desenvolvimento sustentável para toda a população local. Desse modo, temos trabalhado em diversas frentes para trazer benefícios reais à sociedade.'] },
-        { title: 'Treinamento e capacitação', router: '/treinamentos-e-capacitacao', icon: 'mdi-bullseye-arrow', description: ['O IBAGE realiza a capacitação e o treinamento de mão de obra especializada por meio de cursos presenciais, em Brasília ou in loco, contribuindo para a formação de um capital humano especializado.'] }
+        { title: 'Consultoria', router: '#', hasMoreContent: false, icon: 'mdi-finance', description: ['O Instituto IBAGE oferece consultoria, assessoria e auditoria às administrações públicas municipais para dirimir problemas de gestão e garantir serviços de qualidade aos cidadãos.', 'Acreditamos que por meio da melhoria da gestão pública do Brasil teremos um serviço de excelência e respeito aos interesses públicos.', 'O IBAGE atua também na gestão de projetos e de convênios, assegurando o acompanhamento administrativo, financeiro, técnico e jurídico, sempre de acordo com a ética e a legislação vigente.'] },
+        { title: 'Tecnologia e Inovação', router: '#', hasMoreContent: true, icon: 'memory', description: ['Com o uso de soluções digitais e inovações tecnológicas é possível a administração pública prestar um serviço de melhor qualidade, com presteza e rendimento funcional. Assim, reduzir custos à máquina administrativa e alocar corretamente os recursos existentes.', 'Trata-se de um sistema de informação gerencial integrado que subsidia a gestão no processo de tomada de decisão, caracterizado como um sistema complexo, com seus elementos de interação, organização e estrutura.'] },
+        { title: 'Projetos sociais', router: '#', hasMoreContent: false, icon: 'mdi-account-group-outline', description: ['Compreendemos que o nosso desafio é também na área social, de forma a promover um desenvolvimento sustentável para toda a população local. Desse modo, temos trabalhado em diversas frentes para trazer benefícios reais à sociedade.'] },
+        { title: 'Treinamento e capacitação', router: '/treinamentos-e-capacitacao', hasMoreContent: true, icon: 'mdi-bullseye-arrow', description: ['O IBAGE realiza a capacitação e o treinamento de mão de obra especializada por meio de cursos presenciais, em Brasília ou in loco, contribuindo para a formação de um capital humano especializado.'] }
       ]
     }
   },

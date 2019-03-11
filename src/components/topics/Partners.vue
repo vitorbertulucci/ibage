@@ -16,22 +16,38 @@
         navigationNextLabel="<i class='material-icons' size='32px'>keyboard_arrow_right</i>"
         navigationPrevLabel="<i class='material-icons'>keyboard_arrow_left</i>"
       ).partners__content.flex.justify-center.items-center
-        slide.flex.justify-center
-          .slide
-        slide.flex.justify-center
-          .slide
-        slide.flex.justify-center
-          .slide
+        slide(v-for="partner of partners" :key="partner.key").flex.items-center.justify-center
+          q-img(:src="partner.logo" @click.native="openPatnerSite(partner)").slide.cursor-pointer
 </template>
 
 <script>
+import { QImg } from 'quasar'
 import { Carousel, Slide } from 'vue-carousel'
 
 export default {
   name: 'Partners',
   components: {
+    QImg,
     Carousel,
     Slide
+  },
+  data () {
+    return {
+      partners: [
+        { logo: require('../../assets/img/logo-unb.png'), key: 'unb', href: 'http://www.unb.br/' },
+        { logo: require('../../assets/img/logo-prof-amaro.png'), key: 'prof-amaro', href: 'http://l.profamaro.com.br/ebook' },
+        { logo: require('../../assets/img/logo-lox.svg'), key: 'lox', href: 'http://www.loxrecicla.com.br/desktop.php' }
+      ]
+    }
+  },
+  methods: {
+    openPatnerSite (partner) {
+      let a = document.createElement('a')
+      a.href = partner.href
+      a.target = '_blank'
+      a.id = partner.key
+      a.click()
+    }
   }
 }
 </script>
@@ -82,8 +98,9 @@ export default {
       padding 45px 10px 0 10px
 
 .slide
-  width 150px
-  height 150px
-  border-radius 150px
-  background $primary
+  max-width 200px
+  // width 150px
+  // height 150px
+  // border-radius 150px
+  // background $primary
 </style>

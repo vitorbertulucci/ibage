@@ -10,17 +10,18 @@
           .four
           .five
       .news__content
-        .content__primary-news.column
+        .content__primary-news
           q-img(:src="primaryNews.img").primary-news__image
           h4 {{ primaryNews.title }}
           p {{ primaryNews.resume }}
           .primary-news__action.full-width.flex.justify-between.items-end
-            q-btn(
-              color="primary"
-              no-caps
-            ).btn.no-shadow Leia mais
-            label.text-h5 05/03/2019
-        .content__past-news.column.justify-between
+            a(href="http://l.profamaro.com.br/ebook" target="_blank")
+              q-btn(
+                color="primary"
+                no-caps
+              ).btn.no-shadow Leia mais
+            label.text-h5 Fonte: Prof. Amaro
+        //- .content__past-news.column.justify-between
           div(v-for="(item, index) of news").past-news__item.row.no-wrap
             q-img(:src="item.img").past-news__image
             div.column.past-news__content.text-justify
@@ -50,9 +51,9 @@ export default {
   data () {
     return {
       primaryNews: {
-        img: require('../../assets/img/miriam-espacio-328568-unsplash.jpg'),
-        title: 'Lore Ipsum lore acer',
-        resume: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s',
+        img: require('../../assets/img/federal-resources.jpg'),
+        title: 'COMO CAPTAR RECURSOS FEDERAIS',
+        resume: 'Apresenta um tutorial passo a passo sobre como acessar os programas federais com recursos não reembolsáveis disponíveis para os municípios.',
         date: Date.now()
       },
       news: [
@@ -69,6 +70,7 @@ export default {
 @import '~quasar-variables'
 
 .news
+  width 100%
   color $grey-10
   &__title
     margin-bottom 45px
@@ -85,9 +87,9 @@ export default {
       padding 45px 30px
 
   &__content
-    display grid
-    grid-gap 4%
-    grid-template-columns 48% 48%
+    // display grid
+    // grid-gap 4%
+    // grid-template-columns 48% 48%
     // max-width 1110px
     // padding 45px 0 55px 0
     // @media (max-width: 1300px)

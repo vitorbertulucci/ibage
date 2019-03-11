@@ -10,12 +10,16 @@
           .four
           .five
       .contact__content
-        .content__social-media.row.justify-center
-          p Para maiores esclarecimentos, retirar dúvidas, dar sugestões ou críticas, entre em contato conosco por meio do formulário ou pelas nossas redes sociais.
-          .content__social-media__btns
+        .content__social-media.row.justify-left
+          .infos.flex.column.full-width
+            p INSTITUTO BRASILEIRO DE ACAO MUNICIPAL E GESTAO PUBLICA (IBAGE)
+            p ETOR BANCÁRIO SUL, QUADRA 02, BLOCO E, EDIFÍCIO PRIME SALA 206, ASA SUL, BRASÍLIA/DF
+            p CEP: 70070-120
+            p Telefone: (61) 3041-9566
+          .content__social-media__btns.flex.items-center.justify-center.full-width
             q-btn(icon="mdi-facebook" round).no-shadow
-            q-btn(icon="mdi-twitter" round).no-shadow
-            q-btn(icon="mdi-youtube" round).no-shadow
+            q-btn(icon="mdi-instagram" round).no-shadow
+            q-btn(icon="mdi-email" round).no-shadow
           .full-width.items-center.justify-center
             q-img(src="../../assets/img/ibage.png").social-media__logo
         .content__email-form.column
@@ -91,9 +95,10 @@ export default {
       display flex
       flex-direction column
       .content__social-media
-        text-align center
-        align-items center
-        padding-bottom 20px
+        .infos
+          text-align center
+          align-items center
+          padding-bottom 20px
 
 .contact__title
   margin-bottom 45px
