@@ -17,7 +17,11 @@
         navigationPrevLabel="<i class='material-icons'>keyboard_arrow_left</i>"
       ).partners__content.flex.justify-center.items-center
         slide(v-for="partner of partners" :key="partner.key").flex.items-center.justify-center
-          q-img(:src="partner.logo" @click.native="openPatnerSite(partner)").slide.cursor-pointer
+          q-img(
+            @click.native="openPatnerSite(partner)"
+            :src="partner.logo"
+            spinner-color="primary"
+          ).slide.cursor-pointer
 </template>
 
 <script>

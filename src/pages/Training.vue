@@ -73,16 +73,6 @@ export default {
     QPage,
     QHeader
   },
-  meta () {
-    return {
-      title: this.title,
-      meta: {
-        description: { name: 'description', content: 'O IBAGE é uma entidade privada sem fins lucrativos que visa contribuir para Desenvolvimento Sustentável dos municípios e promover a melhoria da qualidade de vida da população local' },
-        keywords: { name: 'keywords', content: 'IBAGE sustentabilidade meio ambiente sem fins lucrativos' },
-        equiv: { 'http-equiv': 'Content-Type', content: 'text/html; charset=UTF-8' }
-      }
-    }
-  },
   methods: {
     redirectToHome () {
       this.$router.push('/')
