@@ -11,11 +11,11 @@
           .five
       .contact__content
         .content__social-media.row.justify-left
-          .infos.flex.column.full-width
-            p INSTITUTO BRASILEIRO DE ACAO MUNICIPAL E GESTAO PUBLICA (IBAGE)
-            p ETOR BANCÁRIO SUL, QUADRA 02, BLOCO E, EDIFÍCIO PRIME SALA 206, ASA SUL, BRASÍLIA/DF
-            p CEP: 70070-120
-            p Telefone: (61) 3041-9566
+          ul.infos.flex.column.full-width
+            li Instituto Brasileiro de Ação Municipal e Gestão Pública (IBAGE)
+            li Setor Bancário Sul, Quadra 02, Bloco E, Edifício Prime Sala 206, Asa Sul, Brasília-DF
+            li CEP: 70070-120
+            li Telefone: (61) 3041-9566
           .content__social-media__btns.flex.items-center.justify-center.full-width
             q-btn(icon="mdi-facebook" round).no-shadow
             q-btn(icon="mdi-instagram" round).no-shadow
@@ -86,6 +86,10 @@ export default {
     @media (max-width: 768px)
       padding 0 30px
 
+  .infos
+    padding-left 20px
+    margin 0
+
   &__content
     display grid
     margin 0 auto 50px auto
@@ -98,7 +102,7 @@ export default {
         .infos
           text-align center
           align-items center
-          padding-bottom 20px
+          padding 0 0 20px 20px
 
 .contact__title
   margin-bottom 45px

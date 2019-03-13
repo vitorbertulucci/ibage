@@ -41,23 +41,30 @@
         .about-us__texts__content__section--inverted.flex.justify-center.items-center
           .about-us__texts__content__section__left.column
             h4 Objetivos
-            p De acordo com o estatuto regimentar, o IBAGE tem como objetivo promover o desenvolvimento sustentável da União, Estados e Municípios brasileiros e atuar para a melhoria do ambiente e da qualidade de vida da população brasileira, mediante as seguintes ações:
+            p De acordo com o estatuto regimentar, o IBAGE tem como objetivo promover o desenvolvimento sustentável da União, Estados e Municípios brasileiros e atuar para a melhoria do ambiente e da qualidade de vida da população brasileira.
+            p
+              span(@click="visible = !visible").open-link Clique aqui&nbsp;
+              | para&nbsp;
+              span(v-if="visible") fechar
+              span(v-else) ver
+              | &nbsp;as ações realizadas para alcançar estes objetivos.
           .about-us__texts__content__section__right--inverted.flex.justify-center
             .img-section
               img(src="../../assets/img/new2.png")
-        .full-width
-          p I. Elaboração e implementação de planos, programas e projetos de natureza social, habitacional, ambiental, educacional, cultural e econômica para União, Estados e Municípios;
-          p II. Atuação na defesa, preservação e conservação do meio ambiente e promoção do desenvolvimento sustentável do país;
-          p III. Confecção e execução de métodos, programas e projetos de modernização administrativa e de desenvolvimento institucional para a Administração Pública Brasileira;
-          p IV. Atuação no aperfeiçoamento da gestão, da governança e da arrecadação tributária dos Estados e Municípios;
-          p V. Elaboração de projetos de intervenção, manutenção ou recuperação das áreas degradadas, recuperação ambiental e regularização fundiária;
-          p VI. Promoção do desenvolvimento econômico e social e combate à pobreza;
-          p VII. Realização de estudos e pesquisas, desenvolvimento de tecnologias alternativas, produção e divulgação de informações e conhecimentos técnicos e científicos; para as ações descritas acima, compreendendo atividades de suporte técnico e legal, consultoria, assessoria e capacitação para órgãos do setor público, da iniciativa privada, do terceiro setor e demais segmentos da sociedade civil;
-          p VIII. Promoção da inclusão social de crianças, adolescentes e adultos, com e sem deficiência, por meio de atividades educativas, culturais, esportivas, recreativas e de reabilitação, fortalecendo suas potencialidades e estendendo os benefícios para seus familiares;
-          p IX. Promoção da inclusão social de pessoas com deficiência moderada através de mobilidade urbana sustentável;
-          p X. Realização de ações que incentivem o consumo sustentável e a reciclagem e coleta de lixo, despertando uma consciência ecológica;
-          p XI. Disseminação do turismo, da cultura, das artes e da prática esportiva como forma de valorização pessoal e social;
-          p XII. Promoção de atividades extracurriculares para fortalecer a educação, vocação artística, turística, esportiva, cultural e ambiental como forma de qualificação para o mercado de trabalho.
+        q-slide-transition
+          div(v-show="visible").about-us__texts__content__goals.full-width
+            p I. Elaboração e implementação de planos, programas e projetos de natureza social, habitacional, ambiental, educacional, cultural e econômica para União, Estados e Municípios;
+            p II. Atuação na defesa, preservação e conservação do meio ambiente e promoção do desenvolvimento sustentável do país;
+            p III. Confecção e execução de métodos, programas e projetos de modernização administrativa e de desenvolvimento institucional para a Administração Pública Brasileira;
+            p IV. Atuação no aperfeiçoamento da gestão, da governança e da arrecadação tributária dos Estados e Municípios;
+            p V. Elaboração de projetos de intervenção, manutenção ou recuperação das áreas degradadas, recuperação ambiental e regularização fundiária;
+            p VI. Promoção do desenvolvimento econômico e social e combate à pobreza;
+            p VII. Realização de estudos e pesquisas, desenvolvimento de tecnologias alternativas, produção e divulgação de informações e conhecimentos técnicos e científicos; para as ações descritas acima, compreendendo atividades de suporte técnico e legal, consultoria, assessoria e capacitação para órgãos do setor público, da iniciativa privada, do terceiro setor e demais segmentos da sociedade civil;
+            p VIII. Promoção da inclusão social de crianças, adolescentes e adultos, com e sem deficiência, por meio de atividades educativas, culturais, esportivas, recreativas e de reabilitação, fortalecendo suas potencialidades e estendendo os benefícios para seus familiares;
+            p IX. Promoção da inclusão social de pessoas com deficiência moderada através de mobilidade urbana sustentável;
+            p X. Realização de ações que incentivem o consumo sustentável e a reciclagem e coleta de lixo, despertando uma consciência ecológica;
+            p XI. Disseminação do turismo, da cultura, das artes e da prática esportiva como forma de valorização pessoal e social;
+            p XII. Promoção de atividades extracurriculares para fortalecer a educação, vocação artística, turística, esportiva, cultural e ambiental como forma de qualificação para o mercado de trabalho.
         .about-us__texts__content__section.flex.justify-center.items-center
           .about-us__texts__content__section__left.column
             h4 Governança Corporativa
@@ -70,14 +77,18 @@
 </template>
 
 <script>
-import {
-  QExpansionItem
-} from 'quasar'
+import { QExpansionItem, QSlideTransition } from 'quasar'
 
 export default {
   name: 'AboutUs',
   components: {
-    QExpansionItem
+    QExpansionItem,
+    QSlideTransition
+  },
+  data () {
+    return {
+      visible: false
+    }
   }
 }
 </script>
@@ -279,4 +290,16 @@ export default {
 
   ul
     padding-left 20px
+
+.open-link
+  font-size 15px
+  font-weight bold
+  color $primary
+  cursor pointer
+
+  &:hover
+    color $quaternary
+
+.about-us__texts__content__goals
+  margin-top 45px
 </style>
