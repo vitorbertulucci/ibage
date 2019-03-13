@@ -23,7 +23,7 @@
           .about-us__texts__content__section__right.flex.justify-center
             .img-section
               img(src="../../assets/img/new.png")
-        .about-us__text__content__card-section.full-width
+        .about-us__text__content__card-section
           .card-section__card.shadow-global
             h5.after--secondary Missão
             p Contribuir para o Desenvolvimento Sustentável de todos os Estados do Brasil, com ênfase naquelas áreas menos favorecidas.
@@ -179,6 +179,7 @@ export default {
         color $grey-10
         width 100%
         margin-top 45px
+
         @media(max-width: 750px)
           flex-direction column
 
@@ -231,14 +232,16 @@ export default {
 
       &__section--inverted
         flex-direction row-reverse
+        margin-top 60px
         @media(max-width: 750px)
           flex-direction column
 
 .about-us__text__content__card-section
-  margin-top 20px
+  margin-top 60px
   display grid
-  grid-template-columns 33% 33% 33%
-  grid-gap 2%
+  grid-template-columns 30.5% 30.5% 30.5%
+  grid-gap 4%
+  color $grey-10
   @media (max-width: 768px)
     display flex
     flex-direction column
@@ -247,26 +250,33 @@ export default {
 
 .card-section__card
   width 100%
+  padding 40px
+  color white
   @media (max-width: 768px)
     max-width 400px
     margin-bottom 20px
+
+  &:first-of-type
+    background $primary
+
+  &:nth-of-type(2)
+    background $quaternary
+
+  &:nth-of-type(3)
+    background $quinary
+
   h5
-    margin-top 0px
-    &:after
+    margin 0 0 20px 0
+    font-size 30px
+
+    &:before
       content ''
       width 35px
       height 7px
       display block
       margin-bottom 20px
-  padding 40px
+      background white
 
-.after--secondary
-  &:after
-    background $secondary
-.after--tertiary
-  &:after
-    background $tertiary
-.after--quaternary
-  &:after
-    background $quaternary
+  ul
+    padding-left 20px
 </style>
