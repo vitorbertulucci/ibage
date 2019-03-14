@@ -59,7 +59,7 @@
 
         h5.title 13. Parcerias Público-Privadas (PPP’s) e Concessões
         p Capacitar e atualizar os servidores e demais colaboradores acerca das normas gerais para licitação e contratação de parceria público-privadas no âmbito da Administração Pública, de forma a resguardar a lisura e adequação dos procedimentos licitatórios e gestão das parcerias público-privadas. Fornecer fundamentação jurídica para a adoção das parcerias público-privadas e das concessões de serviços públicos, com abordagem sobre a Lei nº 11.079/2004.
-
+    footer-page(light)
 </template>
 
 <script>
@@ -67,11 +67,14 @@ import {
   QPage,
   QHeader
 } from 'quasar'
+import FooterPage from '../components/general/Footer'
+
 export default {
   name: 'TraingingPage',
   components: {
     QPage,
-    QHeader
+    QHeader,
+    FooterPage
   },
   methods: {
     redirectToHome () {
