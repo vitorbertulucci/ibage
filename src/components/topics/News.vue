@@ -9,8 +9,8 @@
           .three
           .four
           .five
-      .news__content
-        .content__primary-news
+      .news__content.flex.justify-center
+        .content__primary-news.self-center
           q-img(:src="primaryNews.img").primary-news__image
           h4 {{ primaryNews.title }}
           p {{ primaryNews.resume }}
@@ -102,6 +102,9 @@ export default {
       align-items center
 
 .content__primary-news
+  width 50%
+  @media (max-width: 850px)
+    width 100%
   @media (max-width: 1100px)
     margin-bottom 45px
 

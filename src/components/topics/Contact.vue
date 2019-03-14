@@ -16,19 +16,25 @@
             li Setor Bancário Sul, Quadra 02, Bloco E, Edifício Prime Sala 206, Asa Sul, Brasília-DF
             li CEP: 70070-120
             li Telefone: (61) 3041-9566
+            li E-mail: ibage@ibage.com.br
           .content__social-media__btns.flex.items-center.justify-center.full-width
-            q-btn(icon="mdi-facebook" round).no-shadow
-            q-btn(icon="mdi-instagram" round).no-shadow
-            q-btn(icon="mdi-email" round).no-shadow
+            a(href="https://www.facebook.com/IbageOficial/" target="_blank").color--white
+              q-btn(icon="mdi-facebook" round).no-shadow
+            a(href="https://www.instagram.com/ibageoficial/" target="_blank").color--white
+              q-btn(icon="mdi-instagram" round).no-shadow
+            a(href="mailto:vitorbertulucci1@hotmail.com" title="ibage@ibage.com.br").color--white
+              q-btn(icon="mdi-email" round).no-shadow
           .full-width.items-center.justify-center
             q-img(src="../../assets/img/ibage.png").social-media__logo
-        .content__email-form.column
+        //- form(action="https://formaholic.com/f/4e4b45dfb7ef613b" method="POST" accept-charset="UTF-8").content__email-form.column
+        form(action="https://formspree.io/vitorbertulucci1@hotmail.com" method="POST" accept-charset="UTF-8").content__email-form.column
           q-input(
             v-for="field of fields"
             :key="field.key"
             v-model="emailSubject[field.key]"
             :placeholder="field.label"
             :type="field.type"
+            :name="field.key"
             dense
             square
             outlined
@@ -37,6 +43,7 @@
           ).email-form__input.no-shadow.no-border-radius
           .email-form__btn.flex.self-end
             q-btn(
+              type="submit"
               size="lg"
               no-caps
               color="primary"
@@ -61,10 +68,10 @@ export default {
     return {
       emailSubject: {},
       fields: [
-        { label: 'Nome', key: 'name', type: 'email' },
-        { label: 'E-mail', key: 'email', type: 'text' },
+        { label: 'Nome', key: 'name', type: 'text' },
+        { label: 'E-mail', key: 'email', type: 'email' },
         // { label: 'Endereço', key: 'address', type: 'text' },
-        { label: 'Telefone', key: 'phone', type: 'tel' },
+        { label: 'Telefone', key: 'phone', type: 'text' },
         { label: 'Mensagem', key: 'message', type: 'textarea' }
       ]
     }
@@ -145,6 +152,9 @@ export default {
   max-width 200px
   @media (max-width: 890px)
     margin 0 auto 20px auto
+
+.color--white
+  color white
 </style>
 
 <style lang="stylus">
