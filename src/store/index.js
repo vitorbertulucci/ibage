@@ -3,6 +3,7 @@ import Vuex from 'vuex'
 
 import example from './module-example'
 import menuMobile from './menu-mobile'
+import scrollPosition from './scroll-position'
 
 Vue.use(Vuex)
 
@@ -15,7 +16,8 @@ export default function (/* { ssrContext } */) {
   const Store = new Vuex.Store({
     modules: {
       example,
-      menuMobile
+      menuMobile,
+      scrollPosition
     }
   })
 

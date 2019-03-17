@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-
 import routes from './routes'
-
+import store from '../store'
 Vue.use(VueRouter)
 
 /*
@@ -12,7 +11,20 @@ Vue.use(VueRouter)
 
 export default function (/* { store, ssrContext } */) {
   const Router = new VueRouter({
-    scrollBehavior: () => ({ y: 0 }),
+    scrollBehavior: (to, from, savedPosition) => {
+      const PATHS = [ '/tecnologia-e-inovacao', '/treinamentos-e-capacitacao' ]
+      let s = store()
+      if (PATHS.indexOf(from.path) !== -1) {
+        // let el = document.getElementById('products-and-services')
+        // let correctionValue = window.innerWidth <= 640 ? 65 : 90
+        // let offset = el.offsetTop - correctionValue
+        // debounce(() => window.scrollTo(0, offset), 200)
+        return { y: s.getters['scrollPosition/getPosition'] }
+        // let duration = 500
+        // setScrollPosition(target, offset, duration)
+      }
+      return { y: 0 }
+    },
     routes,
 
     // Leave these as is and change from quasar.conf.js instead!

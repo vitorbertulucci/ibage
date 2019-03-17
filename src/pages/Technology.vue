@@ -4,7 +4,7 @@
       div.header-home__container.flex.items-center.justify-between
         img(src="../assets/img/ibage-logo.png" @click="redirectToHome").header-home__container__logo
         nav.header-home__container__nav
-          a(@click="redirectToHome" href="#") Voltar
+          a(@click="redirectToHome") Voltar
     .technology-page__container.flex.justify-center
       .technology-page__title.self-center
         h3.title Tecnologia e Inovação

@@ -30,6 +30,8 @@
 
 <script>
 import { QIcon, QDialog, QImg, QBtn } from 'quasar'
+import { mapActions } from 'vuex'
+
 export default {
   name: 'ProductsAndServices',
   components: {
@@ -50,10 +52,12 @@ export default {
     }
   },
   methods: {
+    ...mapActions('scrollPosition', [ 'setScrollPosition' ]),
     redirectToPage (router) {
       if (router === '#') {
         this.alert = true
       } else {
+        this.setScrollPosition(window.pageYOffset)
         this.$router.push(router)
       }
     }

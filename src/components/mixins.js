@@ -16,6 +16,7 @@ export default {
   },
   methods: {
     ...mapActions('menuMobile', [ 'setViewState' ]),
+    ...mapActions('scrollPosition', [ 'setScrollPosition' ]),
     scrollElement (link) {
       let el = document.getElementById(link.ref)
       let target = getScrollTarget(el)
@@ -23,6 +24,8 @@ export default {
       let offset = el.offsetTop - correctionValue
       let duration = 500
       setScrollPosition(target, offset, duration)
+      this.setScrollPosition(window.pageYOffset)
+      this.$router.push(`/#${link.ref}`)
       this.setViewState(false)
     }
   }
