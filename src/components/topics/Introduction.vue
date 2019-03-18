@@ -15,7 +15,7 @@
         q-btn(color="primary" unelevated no-caps @click="scrollElement({ ref: 'products-and-services' })") Conheça
       div.introduction__content__right.column.items-end
         nav.introduction__content__right__nav.flex
-          a(v-for="link of links" href="#" @click="scrollElement(link)") {{ link.title }}
+          a(v-for="link of links" @click="scrollElement(link)").cursor-pointer {{ link.title }}
         //- q-btn(
         //-   icon="menu"
         //-   round
