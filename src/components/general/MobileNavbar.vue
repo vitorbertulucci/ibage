@@ -3,7 +3,7 @@
     nav.content.column.items-center.shadow-global
       div(v-for="(link, index) of links" @click="scrollElement(link)").content__link.full-width.text-center.cursor-pointer
         q-separator
-        a(href="#") {{ link.title }}
+        a.cursor-pointer {{ link.title }}
 </template>
 
 <script>
