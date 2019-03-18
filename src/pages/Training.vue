@@ -127,6 +127,7 @@ export default {
         color $primary
         text-decoration none
         transition all .2s ease
+        cursor pointer
 
         &:first-of-type
           margin 0
