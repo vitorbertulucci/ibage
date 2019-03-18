@@ -9,13 +9,19 @@
     //-         a(href="#") Lorem Ipsum
     //-         a(href="#") Lorem Ipsum
     //-         a(href="#") Lorem Ipsum
-    div.footer-home__copyright.flex.items-center.justify-center
-      p Ibage 2019 © Todos os direitos reservados
+    div(:class="{ 'light': light }").footer-home__copyright.flex.items-center.justify-center
+      p(:class="{ 'light': light }") Ibage 2019 © Todos os direitos reservados
 </template>
 
 <script>
 export default {
-  name: 'FooterHome'
+  name: 'FooterHome',
+  props: {
+    light: {
+      type: Boolean,
+      default: false
+    }
+  }
 }
 </script>
 
@@ -97,6 +103,9 @@ export default {
     @media (max-width: 1300px)
       padding 10px 45px
 
+     &.light
+      background $grey-2
+
     p
       width 100%
       color #497564
@@ -104,4 +113,7 @@ export default {
       margin 0
       @media (max-width: 540px)
         text-align center
+
+      &.light
+        color $grey-7
 </style>

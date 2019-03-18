@@ -8,6 +8,10 @@ const routes = [
       {
         path: '/treinamentos-e-capacitacao',
         component: () => import('pages/Training.vue')
+      },
+      {
+        path: '/tecnologia-e-inovacao',
+        component: () => import('pages/Technology.vue')
       }
     ]
   }

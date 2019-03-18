@@ -4,7 +4,7 @@
       div.header-home__container.flex.items-center.justify-between
         img(src="../assets/img/ibage-logo.png" @click="redirectToHome").header-home__container__logo
         nav.header-home__container__nav
-          a(@click="redirectToHome" href="#") Voltar
+          a(@click="redirectToHome") Voltar
     .training-page__container.flex.justify-center
       .training-page__title.self-center
         h3.title Treinamentos e capacitação
@@ -59,7 +59,7 @@
 
         h5.title 13. Parcerias Público-Privadas (PPP’s) e Concessões
         p Capacitar e atualizar os servidores e demais colaboradores acerca das normas gerais para licitação e contratação de parceria público-privadas no âmbito da Administração Pública, de forma a resguardar a lisura e adequação dos procedimentos licitatórios e gestão das parcerias público-privadas. Fornecer fundamentação jurídica para a adoção das parcerias público-privadas e das concessões de serviços públicos, com abordagem sobre a Lei nº 11.079/2004.
-
+    footer-page(light)
 </template>
 
 <script>
@@ -67,25 +67,18 @@ import {
   QPage,
   QHeader
 } from 'quasar'
+import FooterPage from '../components/general/Footer'
+
 export default {
   name: 'TraingingPage',
   components: {
     QPage,
-    QHeader
-  },
-  meta () {
-    return {
-      title: this.title,
-      meta: {
-        description: { name: 'description', content: 'O IBAGE é uma entidade privada sem fins lucrativos que visa contribuir para Desenvolvimento Sustentável dos municípios e promover a melhoria da qualidade de vida da população local' },
-        keywords: { name: 'keywords', content: 'IBAGE sustentabilidade meio ambiente sem fins lucrativos' },
-        equiv: { 'http-equiv': 'Content-Type', content: 'text/html; charset=UTF-8' }
-      }
-    }
+    QHeader,
+    FooterPage
   },
   methods: {
     redirectToHome () {
-      this.$router.push('/')
+      this.$router.push('/#products')
     }
   }
 }
@@ -134,6 +127,7 @@ export default {
         color $primary
         text-decoration none
         transition all .2s ease
+        cursor pointer
 
         &:first-of-type
           margin 0

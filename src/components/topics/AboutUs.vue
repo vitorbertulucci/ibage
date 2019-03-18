@@ -17,32 +17,79 @@
         .about-us__texts__content__section.flex.justify-center.items-center
           .about-us__texts__content__section__left.column
             h4 Sobre nós
-            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.
-            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.
+            p O Instituto Brasileiro de Ação Municipal e Gestão Pública (IBAGE) é uma Organização da Sociedade Civil (OSC) de direito privado, sem fins econômicos, que desde 2009 trabalha em todo território nacional para tornar o Brasil um país mais democrático e transparente, disseminando conhecimentos, para que a vida dos cidadãos seja mais digna.
+            p Desejamos contribuir para o desenvolvimento sustentável dos Estados, Municípios e regiões menos favorecidas, promovendo, consequentemente, a melhora da qualidade de vida da população local. Atuamos a favor do interesse público e dos direitos dos cidadãos, por meio da gestão dos recursos públicos disponíveis, do planejamento de estratégias de atuação e iniciativas em políticas públicas a fim de melhorar o cenário da administração pública atual.
+            p Compreendemos que o desafio é também social, portanto, o IBAGE tem como objetivo a melhoria da qualidade de vida das populações locais, por meio da promoção do bem-estar social e da melhoria da qualidade de vida dessa população.
           .about-us__texts__content__section__right.flex.justify-center
             .img-section
               img(src="../../assets/img/new.png")
+        .about-us__text__content__card-section
+          .card-section__card.shadow-global
+            h5.after--secondary Missão
+            p Contribuir para o Desenvolvimento Sustentável de todos os Estados do Brasil, com ênfase naquelas áreas menos favorecidas.
+            //- e consequentemente, promover a melhoria da qualidade de vida da população local.
+          .card-section__card.shadow-global
+            h5.after--tertiary Visão
+            p Ser um ator de mudanças estruturais por meio de oportunidades de transformação social.
+          .card-section__card.shadow-global
+            h5.after--quaternary Valores
+            ul
+              li Inovação
+              li Ética e Transparência
+              li Eficiência
+              li Educação de qualidade
         .about-us__texts__content__section--inverted.flex.justify-center.items-center
           .about-us__texts__content__section__left.column
-            h4 Missão
-            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.
-            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.
+            h4 Objetivos
+            p De acordo com o estatuto regimentar, o IBAGE tem como objetivo promover o desenvolvimento sustentável da União, Estados e Municípios brasileiros e atuar para a melhoria do ambiente e da qualidade de vida da população brasileira.
+            p
+              span(@click="visible = !visible").open-link Clique aqui&nbsp;
+              | para&nbsp;
+              span(v-if="visible") fechar
+              span(v-else) ver
+              | &nbsp;as ações realizadas para alcançar estes objetivos.
           .about-us__texts__content__section__right--inverted.flex.justify-center
             .img-section
               img(src="../../assets/img/new2.png")
+        q-slide-transition
+          div(v-show="visible").about-us__texts__content__goals.full-width
+            p I. Elaboração e implementação de planos, programas e projetos de natureza social, habitacional, ambiental, educacional, cultural e econômica para União, Estados e Municípios;
+            p II. Atuação na defesa, preservação e conservação do meio ambiente e promoção do desenvolvimento sustentável do país;
+            p III. Confecção e execução de métodos, programas e projetos de modernização administrativa e de desenvolvimento institucional para a Administração Pública Brasileira;
+            p IV. Atuação no aperfeiçoamento da gestão, da governança e da arrecadação tributária dos Estados e Municípios;
+            p V. Elaboração de projetos de intervenção, manutenção ou recuperação das áreas degradadas, recuperação ambiental e regularização fundiária;
+            p VI. Promoção do desenvolvimento econômico e social e combate à pobreza;
+            p VII. Realização de estudos e pesquisas, desenvolvimento de tecnologias alternativas, produção e divulgação de informações e conhecimentos técnicos e científicos; para as ações descritas acima, compreendendo atividades de suporte técnico e legal, consultoria, assessoria e capacitação para órgãos do setor público, da iniciativa privada, do terceiro setor e demais segmentos da sociedade civil;
+            p VIII. Promoção da inclusão social de crianças, adolescentes e adultos, com e sem deficiência, por meio de atividades educativas, culturais, esportivas, recreativas e de reabilitação, fortalecendo suas potencialidades e estendendo os benefícios para seus familiares;
+            p IX. Promoção da inclusão social de pessoas com deficiência moderada através de mobilidade urbana sustentável;
+            p X. Realização de ações que incentivem o consumo sustentável e a reciclagem e coleta de lixo, despertando uma consciência ecológica;
+            p XI. Disseminação do turismo, da cultura, das artes e da prática esportiva como forma de valorização pessoal e social;
+            p XII. Promoção de atividades extracurriculares para fortalecer a educação, vocação artística, turística, esportiva, cultural e ambiental como forma de qualificação para o mercado de trabalho.
         .about-us__texts__content__section.flex.justify-center.items-center
           .about-us__texts__content__section__left.column
-            h4 Objetivos
-            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.
-            p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap.
+            h4 Governança Corporativa
+            p A gestão do Instituto é realizada pelo Conselho Diretor, que é formado por um Presidente e um Diretor Administrativo-Financeiro.
+            p A fiscalização dos assuntos financeiros e contábeis do Instituto é realizado pelo Conselho Fiscal do IBAGE.
+            p Os membros dos Conselhos Diretor e Fiscal são eleitos pela Assembleia Geral, para mandatos de três anos, entre os sócios em pleno gozo de seus direitos legais e estatutários.
           .about-us__texts__content__section__right.flex.justify-center
             .img-section
               img(src="../../assets/img/new3.png")
 </template>
 
 <script>
+import { QExpansionItem, QSlideTransition } from 'quasar'
+
 export default {
-  name: 'AboutUs'
+  name: 'AboutUs',
+  components: {
+    QExpansionItem,
+    QSlideTransition
+  },
+  data () {
+    return {
+      visible: false
+    }
+  }
 }
 </script>
 
@@ -143,6 +190,7 @@ export default {
         color $grey-10
         width 100%
         margin-top 45px
+
         @media(max-width: 750px)
           flex-direction column
 
@@ -195,7 +243,63 @@ export default {
 
       &__section--inverted
         flex-direction row-reverse
+        margin-top 60px
         @media(max-width: 750px)
           flex-direction column
 
+.about-us__text__content__card-section
+  margin-top 60px
+  display grid
+  grid-template-columns 30.5% 30.5% 30.5%
+  grid-gap 4%
+  color $grey-10
+  @media (max-width: 768px)
+    display flex
+    flex-direction column
+    justify-content center
+    align-items center
+
+.card-section__card
+  width 100%
+  padding 40px
+  color white
+  @media (max-width: 768px)
+    max-width 400px
+    margin-bottom 20px
+
+  &:first-of-type
+    background $primary
+
+  &:nth-of-type(2)
+    background $quaternary
+
+  &:nth-of-type(3)
+    background $quinary
+
+  h5
+    margin 0 0 20px 0
+    font-size 30px
+
+    &:before
+      content ''
+      width 35px
+      height 7px
+      display block
+      margin-bottom 20px
+      background white
+
+  ul
+    padding-left 20px
+
+.open-link
+  font-size 15px
+  font-weight bold
+  color $primary
+  cursor pointer
+
+  &:hover
+    color $quaternary
+
+.about-us__texts__content__goals
+  margin-top 45px
 </style>

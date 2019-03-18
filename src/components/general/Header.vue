@@ -8,7 +8,7 @@
       div.header-home__container.flex.items-center.justify-between
         q-img(:src="require('../../assets/img/ibage-logo.png')").header-home__container__logo
         nav.header-home__container__nav.flex
-          a(v-for="link of links" href="#" @click="scrollElement(link)") {{ link.title }}
+          a(v-for="link of links" @click="scrollElement(link)") {{ link.title }}
         q-btn(
           v-if="this.visibility"
           icon="mdi-menu"
@@ -76,7 +76,7 @@ export default {
     width 100%
     max-width 1110px
     @media (max-width: 1300px)
-      padding 45px
+      padding 0 45px
     @media (max-width: 768px)
       padding 15px 25px 15px 30px
     @media (max-width: 414px)
@@ -100,6 +100,7 @@ export default {
         color $primary
         text-decoration none
         transition all .2s ease
+        cursor pointer
 
         &:first-of-type
           margin 0
