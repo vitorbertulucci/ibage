@@ -19,7 +19,7 @@
             q-btn(color="primary" unelevated no-caps @click="redirectToPage(item.router)").no-border.no-shadow.no-border-radius Saiba mais
     q-dialog(v-model="alert")
       .dialog-box.column.items-center
-        q-img(src="../../assets/img/ibage-logo.png")
+        q-img(:src="require('../../assets/img/ibage-logo.png')")
         h5 Em breve mais informações...
         q-btn(
           @click="alert = false"

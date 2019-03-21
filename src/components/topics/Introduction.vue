@@ -2,7 +2,7 @@
   section.introduction.flex
     div.introduction__bg-left
     div.introduction__bg-right
-      q-img(:src="require('../../assets/img/61.jpg')")
+      q-img(:src="require('../../assets/img/61-min.jpg')")
       //- q-btn(icon="menu" round flat @click="changeMenuVisibility").btn-menu
     div.introduction__content.flex
       div.introduction__content__left.column.items-start.shadow-global

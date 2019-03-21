@@ -51,16 +51,16 @@ export default {
   data () {
     return {
       primaryNews: {
-        img: require('../../assets/img/federal-resources.jpg'),
+        img: require('../../assets/img/federal-resources-min.jpg'),
         title: 'COMO CAPTAR RECURSOS FEDERAIS',
         resume: 'Apresenta um tutorial passo a passo sobre como acessar os programas federais com recursos não reembolsáveis disponíveis para os municípios.',
         date: Date.now()
-      },
-      news: [
-        { img: require('../../assets/img/miriam-espacio-328568-unsplash.jpg'), title: 'Lore Ipsum lore lore', resume: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s', date: '05/03/2019' },
-        { img: require('../../assets/img/miriam-espacio-328568-unsplash.jpg'), title: 'Lore Ipsum lore lore', resume: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s', date: '05/03/2019' },
-        { img: require('../../assets/img/miriam-espacio-328568-unsplash.jpg'), title: 'Lore Ipsum lore lore', resume: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s', date: '05/03/2019' }
-      ]
+      }
+      // news: [
+      //   { img: '', title: 'Lore Ipsum lore lore', resume: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s', date: '05/03/2019' },
+      //   { img: '', title: 'Lore Ipsum lore lore', resume: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s', date: '05/03/2019' },
+      //   { img: '', title: 'Lore Ipsum lore lore', resume: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s', date: '05/03/2019' }
+      // ]
     }
   }
 }

@@ -1,7 +1,7 @@
 <template lang="pug">
   q-page.index.column
     mobile-navbar(v-show="isShowing").animate-popup-down
-    introduction
+    introduction#introduction
     header-home
     about-us#about-us
     products-and-services#products-and-services

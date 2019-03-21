@@ -6,7 +6,7 @@
   )
     header(v-show="visibility" v-scroll="scrolled").header-home.flex.items-center.justify-center.shadow-global.animate-pop
       div.header-home__container.flex.items-center.justify-between
-        q-img(:src="require('../../assets/img/ibage-logo.png')").header-home__container__logo
+        q-img(:src="require('../../assets/img/ibage-logo.png')" @click.native="redirectToIndex").header-home__container__logo.cursor-pointer
         nav.header-home__container__nav.flex
           a(v-for="link of links" @click="scrollElement(link)") {{ link.title }}
         q-btn(
@@ -20,7 +20,7 @@
 </template>
 
 <script>
-import { QImg } from 'quasar'
+import { QImg, scroll } from 'quasar'
 
 import { mapActions, mapGetters } from 'vuex'
 import mixins from '../mixins'
@@ -42,6 +42,14 @@ export default {
   },
   methods: {
     ...mapActions('menuMobile', [ 'setViewState' ]),
+    redirectToIndex () {
+      const { getScrollTarget, setScrollPosition } = scroll
+      let el = document.getElementById('introduction')
+      let target = getScrollTarget(el)
+      let offset = el.offsetTop
+      let duration = 500
+      setScrollPosition(target, offset, duration)
+    },
     debouncedScroll: debounce((_this, position) => {
       _this.visibility = position >= 140
     }, 50),
