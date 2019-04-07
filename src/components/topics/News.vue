@@ -9,7 +9,7 @@
           .three
           .four
           .five
-      .news__content.flex.justify-center
+      .news__content.column.justify-center
         .content__primary-news.self-center
           q-img(:src="primaryNews.img").primary-news__image
           h4 {{ primaryNews.title }}
@@ -21,18 +21,17 @@
                 no-caps
               ).btn.no-shadow Leia mais
             label.text-h5 Fonte: Prof. Amaro
-        //- .content__past-news.column.justify-between
+        .content__past-news.column.justify-between.self-center
           div(v-for="(item, index) of news").past-news__item.row.no-wrap
-            q-img(:src="item.img").past-news__image
-            div.column.past-news__content.text-justify
+            iframe(:src="item.src.replace('watch?v=', 'embed/')" allowfullscreen).past-news__image
+            div.column.past-news__content.text-justify.justify-between.full-width
               label.text-h6 {{ item.title }}
-              p {{ item.resume }}
-              div.full-width.flex.justify-between.items-end
-                label {{ item.date }}
-                q-btn(
-                  color="primary"
-                  no-caps
-                ).no-border.no-border-radius.no-shadow Leia mais
+              div.full-width.flex.justify-end.items-end.self-end
+                a(:href="item.src" target="_blank")
+                  q-btn(
+                    color="primary"
+                    no-caps
+                  ).no-border.no-border-radius.no-shadow Veja
             div(:class="`colorful-border-${index}`")
 </template>
 
@@ -55,12 +54,13 @@ export default {
         title: 'COMO CAPTAR RECURSOS FEDERAIS',
         resume: 'Apresenta um tutorial passo a passo sobre como acessar os programas federais com recursos não reembolsáveis disponíveis para os municípios.',
         date: Date.now()
-      }
-      // news: [
-      //   { img: '', title: 'Lore Ipsum lore lore', resume: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s', date: '05/03/2019' },
-      //   { img: '', title: 'Lore Ipsum lore lore', resume: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s', date: '05/03/2019' },
-      //   { img: '', title: 'Lore Ipsum lore lore', resume: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1500s', date: '05/03/2019' }
-      // ]
+      },
+      news: [
+        { src: 'https://www.youtube.com/watch?v=2pMEAeRSU8g?enablejsapi=1&origin=https://www.ibage.com.br', title: 'Contextualização da necessidade de gerir custos no atual cenário político e econômico' },
+        { src: 'https://www.youtube.com/watch?v=OBSpmmIopWc?enablejsapi=1&origin=https://www.ibage.com.br', title: 'Gestão de custos - como um instrumento de governança' },
+        { src: 'https://www.youtube.com/watch?v=5rZJZMiMkNk?enablejsapi=1&origin=https://www.ibage.com.br', title: 'O que é o SICGESP?' },
+        { src: 'https://www.youtube.com/watch?v=PtAUScuzV1w?enablejsapi=1&origin=https://www.ibage.com.br', title: 'Benefícios na utilização do SICGESP' }
+      ]
     }
   }
 }
@@ -102,7 +102,7 @@ export default {
       align-items center
 
 .content__primary-news
-  width 50%
+  width 60%
   @media (max-width: 850px)
     width 100%
   @media (max-width: 1100px)
@@ -127,9 +127,13 @@ export default {
     @media(max-width: 520px)
       font-size 16px
 
+.content__past-news
+  width 60%
+  @media (max-width: 850px)
+    width 100%
+
 .past-news__item
-  @media (max-width: 1100px)
-    padding-top 25px
+  padding-top 25px
   @media (max-width: 610px)
     .past-news__content
       flex-wrap wrap !important
@@ -156,6 +160,10 @@ export default {
 .colorful-border-2
   width 15px
   background $quaternary
+
+.colorful-border-3
+  width 15px
+  background $quinary
 
 .text-h5
   font-size 18px

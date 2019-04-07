@@ -82,6 +82,12 @@ module.exports = function (ctx) {
     },
 
     devServer: {
+      before (app) {
+        const cors = require('cors')
+        app.use(cors({
+          origin: ['https://www.youtube.com']
+        }))
+      },
       // https: true,
       // port: 8080,
       open: true // opens browser window automatically
